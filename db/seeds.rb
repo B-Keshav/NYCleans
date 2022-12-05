@@ -21,9 +21,9 @@ keshav = User.create(name: "BKeshav", age: 109, password_digest: "keshav123", bi
 randy = User.create(name: "XxRandySavagexX", age: 22, password_digest: "Randy123", bio: "I'm Randy Savage. I'll beat you up, yo.", organization_id: org1.id) 
 
 # JOBS
-job1 = Job.create(location_id: bat.id, desciption: "Battery park is gross and we need to clean it up!", job_name: "Clean up battery park")
-job2 = Job.create(location_id: bull.id, desciption: "Someone spraypainted the Bull's balls, and we gotta fix it", job_name: "Fix the Bull")
-job3 = Job.create(location_id: bowl.id, desciption: "Bowling Green is looking drab. We should plant some flowers to beautify it!", job_name: "Beautify Bowling Green")
+job1 = Job.create(location_id: bat.id, description: "Battery park is gross and we need to clean it up!", job_name: "Clean up battery park")
+job2 = Job.create(location_id: bull.id, description: "Someone spraypainted the Bull's balls, and we gotta fix it", job_name: "Fix the Bull")
+job3 = Job.create(location_id: bowl.id, description: "Bowling Green is looking drab. We should plant some flowers to beautify it!", job_name: "Beautify Bowling Green")
 
 
 # VOLUNTEERS
