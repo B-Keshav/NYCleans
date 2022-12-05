@@ -16,9 +16,9 @@ bull = Location.create(address: "Charging Bull", city: "New York City", state: "
 bowl = Location.create(address: "Bowling Green", city: "New York City", state: "New York", zip: 10004, lat: 40.70521926879883, lng: -74.0228271484375)
 
 # USERS
-tim = User.create(name: "TimDaToolMan", age: 42, password_digest: "butts", bio: "I am definitely NOT Tim Allen (I'm Tim Allen)", organization_id: org1.id)
-keshav = User.create(name: "BKeshav", age: 109, password_digest: "keshav123", bio: "Snake behavior only", organization_id: org1.id)
-randy = User.create(name: "XxRandySavagexX", age: 22, password_digest: "Randy123", bio: "I'm Randy Savage. I'll beat you up, yo.", organization_id: org1.id) 
+tim = User.create(name: "TimDaToolMan", age: 42, password: "butts", bio: "I am definitely NOT Tim Allen (I'm Tim Allen)", organization_id: org1.id)
+keshav = User.create(name: "BKeshav", age: 109, password: "keshav123", bio: "Snake behavior only", organization_id: org1.id)
+randy = User.create(name: "XxRandySavagexX", age: 22, password: "Randy123", bio: "I'm Randy Savage. I'll beat you up, yo.", organization_id: org1.id) 
 
 # JOBS
 job1 = Job.create(location_id: bat.id, description: "Battery park is gross and we need to clean it up!", job_name: "Clean up battery park")
