@@ -1,7 +1,8 @@
 import './App.css';
 
 import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Map from "./Map"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,7 +16,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+      <Link to={"/map"}>
+        <button>Map</button>
+      </Link>
         <Switch>
+          <Route path="/map" >
+            <Map />
+          </Route>
           <Route path="/testing">
             <h1>Test Route</h1>
           </Route>
