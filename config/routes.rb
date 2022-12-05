@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :volunteers
+  resources :users
+  resources :jobs
+  resources :locations
+  resources :organizations
 
   get '/hello', to: 'application#hello_world'
 
