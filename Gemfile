@@ -53,3 +53,5 @@ end
 gem "active_model_serializers", "~> 0.10.13"
 
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
+
+gem 'net-http'
