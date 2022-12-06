@@ -13,21 +13,21 @@ function Map() {
 
     useEffect(() => {
         fetch("/joblocations")
-          .then((r) => r.json())
-          .then(data => setJobLocations(data))
-      }, []);
+            .then((r) => r.json())
+            .then(data => setJobLocations(data))
+    }, []);
 
-      const jobLocationArray = jobLocations.map((location => {
+    const jobLocationArray = jobLocations.map((location => {
         <LocationPin
-        lat={location.lat}
-        lng={location.lng}
-        text={location.address}
+            lat={location.lat}
+            lng={location.lng}
+            text={location.address}
         />
-      }))
+    }))
 
     return (
         <div className="map">
-            <h2 className="map-h2">Come Visit Us At Our Campus</h2>
+            <h2 className="map-h2">Look for Volunteer Opportunities near you!</h2>
 
             <div className="google-map">
                 <GoogleMapReact
@@ -35,7 +35,12 @@ function Map() {
                     defaultCenter={location}
                     defaultZoom={17}
                 >
-                    {jobLocationArray}
+                    <LocationPin
+                        lat={location.lat}
+                        lng={location.lng}
+                        text={location.address}
+                    />
+                    {/* {jobLocationArray} */}
                 </GoogleMapReact>
             </div>
         </div>
