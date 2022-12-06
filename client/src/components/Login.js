@@ -10,7 +10,10 @@ function Login () {
         const [bio, setBio] = useState("")
         const [org, setOrg] = useState(1)
     
-      
+        function handleResponse (res) {
+             alert(res.errors)
+        }
+
         function handleSubmit(e) {
           e.preventDefault();
           fetch("/signup", {
@@ -27,11 +30,11 @@ function Login () {
             }),
           })
             .then((r) => r.json())
-            .then((res) => console.log(res));
+            .then((res) => handleResponse(res));
         }
       
         return (
-            <div className="App">
+            <div className="App"> 
             <form onSubmit={handleSubmit}>
               <div>
                 <input
