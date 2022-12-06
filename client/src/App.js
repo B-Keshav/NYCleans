@@ -10,16 +10,9 @@ import { useState } from 'react';
 
 function App() {
 
-//   const [count, setCount] = useState(0);
-
-
-  // useEffect(() => {
-  //   fetch("/hello")
-  //     .then((r) => r.json())
-  //     .then((data) => setCount(data.count));
-  // }, []);
   const [onLogin, setLogin] = useState([])
 
+  
   return (
     <BrowserRouter>
       <div className="App">

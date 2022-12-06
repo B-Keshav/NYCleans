@@ -18,7 +18,7 @@ const [jobs, setJobs] = useState([])
     return (
         <>
         <h1>View Jobs</h1>
-        
+        <input type="text" placeholder="search"></input>
         <div className="jobContainer"> 
         {jobsArray} 
         </div>
