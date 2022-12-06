@@ -7,6 +7,7 @@ function JobCard ({name, desc, location, image="https://creazilla-store.fra1.dig
         <img className="jobImage"src={image} alt="Image of location to be cleaned"></img>
         <p className="jobDesc">{desc}</p>
         <p className="jobLoc">{location.address}</p>
+        <button>Volunteer To Clean!</button>
         </div>
     )
 }
