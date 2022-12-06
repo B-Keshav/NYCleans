@@ -7,7 +7,9 @@ import Jobs from './components/Jobs';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 function App() {
+
 //   const [count, setCount] = useState(0);
+
 
   // useEffect(() => {
   //   fetch("/hello")
