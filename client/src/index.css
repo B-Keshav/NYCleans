@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.jobContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "header header header" 
+    "job job job"
+    "job job job";
+
+}
+.jobCard {
+  display: block;
+  justify-content: center;
+  background-color: aliceblue;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  outline-style: double;
+  outline-color: #cfc4c4;
+  outline-width: thin;
+}
+
+.jobImage {
+  position: relative;
+  max-width: 70%;
+  max-height: 70%;
+  margin: 3%;
+}

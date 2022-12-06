@@ -6,6 +6,7 @@ import PostJob from './PostJob';
 
 // import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { useState } from 'react';
 
 function App() {
 
@@ -17,19 +18,28 @@ function App() {
   //     .then((r) => r.json())
   //     .then((data) => setCount(data.count));
   // }, []);
+  const [onLogin, setLogin] = useState([])
 
   return (
     <BrowserRouter>
       <div className="App">
+      <Link to={"/"}>
+        <button>Home</button>
+      </Link>
       <Link to={"/jobs"}>
         <button>Jobs</button>
       </Link>
+
       <Link to={"/postajob"}>
         <button>Post a Job</button>
       </Link>
+      <Link to={"/volunteers"}>
+        <button>Sign In</button>
+
+      </Link>
         <Switch>
           <Route path="/volunteers" >
-            <Login/>
+            <Login onLogin={onLogin}/>
           </Route>
           <Route path="/jobs">
             < Jobs />
