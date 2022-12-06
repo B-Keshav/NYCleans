@@ -1,34 +1,37 @@
 import './App.css';
+import Home from './components/Home';
+import Login from './components/Login'
+import Jobs from './components/Jobs';
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import Map from "./Map"
 
 function App() {
-  
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
+//   const [count, setCount] = useState(0);
+
+
+  // useEffect(() => {
+  //   fetch("/hello")
+  //     .then((r) => r.json())
+  //     .then((data) => setCount(data.count));
+  // }, []);
 
   return (
     <BrowserRouter>
       <div className="App">
-      <Link to={"/map"}>
-        <button>Map</button>
+      <Link to={"/jobs"}>
+        <button>Jobs</button>
       </Link>
         <Switch>
-          <Route path="/map" >
-            <Map />
+          <Route path="/volunteers" >
+            <Login/>
           </Route>
-          <Route path="/testing">
-            <h1>Test Route</h1>
+          <Route path="/jobs">
+            < Jobs />
           </Route>
           <Route path="/">
-            <h1>Page Count: {count}</h1>
+            <Home/>
           </Route>
         </Switch>
       </div>
