@@ -1,4 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :age, :password_digest, :bio
+  attributes :id, :name, :age, :bio
   has_one :organization
 end

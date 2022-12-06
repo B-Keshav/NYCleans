@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UserProfile from "./UserProfile";
 
 import {useState} from "react";
@@ -9,10 +9,24 @@ function Login () {
         const [password, setPassword] = useState("")
         const [bio, setBio] = useState("")
         const [org, setOrg] = useState(1)
+
+        const [login, setLogin] = useState({
+            name: "",
+            password: "",
+        })
     
         function handleResponse (res) {
              alert(res.errors)
         }
+
+      function handleChange (e) {
+          const { name, value } = e.target
+            setLogin({
+                ...login, [name]: value
+            })
+            console.log(login)
+      }
+        
 
         function handleSubmit(e) {
           e.preventDefault();
@@ -32,8 +46,26 @@ function Login () {
             .then((r) => r.json())
             .then((res) => handleResponse(res));
         }
+
+        function handleLogin (e){
+            e.preventDefault();
+            fetch("/login", {
+                method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify ({
+                name: login.name,
+                password: login.password
+            })
+        })
+                .then(res => res.json())
+                .then(data => console.log(data))
+
+        }
       
         return (
+            <div>
             <div className="App"> 
             <form onSubmit={handleSubmit}>
               <div>
@@ -66,6 +98,23 @@ function Login () {
               <button type="submit">Create Account</button>
             </form>
           </div>
+          <div> <form onSubmit={handleLogin}>
+          <div>
+            <input
+              name='name'
+              placeholder='Name'
+              onChange={handleChange}
+            />
+             <input
+              name='password'
+              placeholder='Password'
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit">Sign In</button>
+        </form>
+        </div>
+        </div>
         );
       }
       
