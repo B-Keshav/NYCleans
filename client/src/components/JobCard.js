@@ -1,4 +1,4 @@
-function JobCard ({name, desc, location, image}) {
+function JobCard ({name, desc, location, image="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/63555/london-plane-tree-green-leaf-clipart-md.png"}) {
 
 console.log(image)
     return (
