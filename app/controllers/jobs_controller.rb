@@ -26,6 +26,15 @@ class JobsController < ApplicationController
         head :no_content
     end 
 
+    def job_locations
+        location_array = []
+        jobs = Job.all
+        jobs.each do |job|
+            location_array.push(job.location)
+        end
+        render json: location_array, status: :ok 
+    end
+
 
     private 
 
