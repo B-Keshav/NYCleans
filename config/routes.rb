@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :volunteers
   resources :users
-  resources :jobs
+  resources :jobs, only: [:create]
   resources :locations, only: [:index, :show]
   resources :organizations
 

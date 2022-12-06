@@ -1,3 +1,5 @@
+
+
 class JobsController < ApplicationController
 
     def index 
@@ -10,8 +12,17 @@ class JobsController < ApplicationController
     end
 
     def create
-        job = Job.create!(job_params)
-        render json: job, status: :created
+        job_info = [params[:address], params[:city], params[:state], params[:zip], params[:description], params[:jobName]]
+        
+        job_address = [params[:address], params[:city], params[:state], params[:zip]].compact.join(', ')
+        geocode_results = Geocoder.search(job_address)
+    
+        location = Location.create(address: job_address, lat: geocode_results.first.coordinates.first, lng: geocode_results.first.coordinates.second)
+        puts location.lat 
+
+        job = Job.create!(location_id: location.id, description: params[:description], job_name: params[:jobName])
+        # render json: job, status: :created
+        render json: job, include: :location, status: :ok 
     end
 
     def update
@@ -39,7 +50,7 @@ class JobsController < ApplicationController
     private 
 
     def job_params 
-        params.permit(:location_id, :description, :job_name)
+        params.permit(:address, :city, :state, :zip, :description, :jobName)
     end
 
 end
