@@ -14,16 +14,29 @@ code {
 
 .jobContainer {
   display: grid;
-  /* flex-wrap: wrap; */
-}
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "header header header" 
+    "job job job"
+    "job job job";
 
+}
 .jobCard {
-  display: grid;
+  display: block;
+  justify-content: center;
   background-color: aliceblue;
-  max-width: 10%;
-  margin: 5px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  outline-style: double;
+  outline-color: #cfc4c4;
+  outline-width: thin;
 }
 
 .jobImage {
-  max-width: fit-content;
+  position: relative;
+  max-width: 70%;
+  max-height: 70%;
+  margin: 3%;
 }
