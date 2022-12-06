@@ -19,8 +19,7 @@
   }
   
   .pin-icon {
-    height: 400px;
-    z-index: 1;
+    font-size: 4rem;
   }
   
   .pin-text {

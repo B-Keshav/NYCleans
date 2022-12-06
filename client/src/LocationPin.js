@@ -1,11 +1,11 @@
 import React from 'react';
-import locationIcon from './images/LocationIcon.png'
+import { Icon } from '@iconify/react'
+import locationIcon from '@iconify/icons-mdi/map-marker'
 
-
-function LocationPin () {
+function LocationPin ({ text }) {
   <div className="pin">
-    <img src={locationIcon} className="pin-icon" />
-    <p className="pin-text">Address</p>
+    <Icon icon={locationIcon} className="pin-icon" />
+    <p className="pin-text">{text}</p>
   </div>
 }
 
