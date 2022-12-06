@@ -11,9 +11,9 @@
 org1 = Organization.create(name: "Manhattan Clean Up Initiative", city: "NYC", description: "Making Manhattan cleaner one day at a time", non_profit: true)
 
 # LOCATIONS
-bat = Location.create(address: "Battery Park", city: "New York City", state: "New York", zip: 10004, lat: 43.1755169, lng: -77.731462)
-bull = Location.create(address: "Charging Bull", city: "New York City", state: "New York", zip: 10004, lat: 40.704761, lng: -74.016677)
-bowl = Location.create(address: "Bowling Green", city: "New York City", state: "New York", zip: 10004, lat: 40.70521926879883, lng: -74.0228271484375)
+bat = Location.create(address: "Battery Park", city: "New York City", state: "New York", zip: 10004, lng: -77.731462, lat: 43.1755169)
+bull = Location.create(address: "Charging Bull", city: "New York City", state: "New York", zip: 10004, lng: -74.016677, lat: 40.704761)
+bowl = Location.create(address: "Bowling Green", city: "New York City", state: "New York", zip: 10004, lng: -74.0228271484375, lat: 40.70521926879883)
 
 # USERS
 tim = User.create(name: "TimDaToolMan", age: 42, password: "butts", bio: "I am definitely NOT Tim Allen (I'm Tim Allen)", organization_id: org1.id)
