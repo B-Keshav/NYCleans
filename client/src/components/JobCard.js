@@ -2,12 +2,12 @@ function JobCard ({name, desc, location, image="https://creazilla-store.fra1.dig
 
 console.log(image)
     return (
-        <span className="jobCard">
-        <h1 className="jobTitle">{name}</h1>
+        <div className="jobCard">
+        <p className="jobTitle">{name}</p>
         <img className="jobImage"src={image}></img>
-        <h2 className="jobDesc">{desc}</h2>
-        <h2 className="jobLoc">{location.address}</h2>
-        </span>
+        <p className="jobDesc">{desc}</p>
+        <p className="jobLoc">{location.address}</p>
+        </div>
     )
 }
 

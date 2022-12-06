@@ -16,10 +16,13 @@ const [jobs, setJobs] = useState([])
   })
   
     return (
-        // <JobCard />
+        <>
+        <h1>View Jobs</h1>
+        
         <div className="jobContainer"> 
-        {jobsArray} </div>
-
+        {jobsArray} 
+        </div>
+        </>
     )
 }
 
