@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :volunteers
   resources :users
   resources :jobs
-  resources :locations
+  resources :locations, only: [:index, :show]
   resources :organizations
 
   post '/signup', to: "users#create"
