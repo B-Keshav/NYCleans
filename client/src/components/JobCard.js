@@ -1,11 +1,13 @@
-function JobCard () {
+function JobCard ({name, desc, location, image}) {
 
-
+console.log(image)
     return (
-        <div>
-        <h1>Job Title</h1>
-        <h2>Job Descritption</h2>
-        </div>
+        <span className="jobCard">
+        <h1 className="jobTitle">{name}</h1>
+        <img className="jobImage"src={image}></img>
+        <h2 className="jobDesc">{desc}</h2>
+        <h2 className="jobLoc">{location.address}</h2>
+        </span>
     )
 }
 
