@@ -15,6 +15,7 @@ function Login({ onLogin }) {
   const [city, setCity] = useState("")
   const [state, setState] = useState("")
   const [zip, setZip] = useState(null)
+  const [avatar, setAvatar] = useState("")
 
   const [login, setLogin] = useState({
     name: "",
@@ -51,7 +52,8 @@ function Login({ onLogin }) {
         address: address,
         city: city,
         state: state,
-        zip: zip
+        zip: zip,
+        avatar: avatar
       }),
     })
       .then((r) => r.json())
@@ -131,11 +133,12 @@ function Login({ onLogin }) {
               name="zip"
               onChange={(e) => setZip(e.target.value)}
             />
-            <AvatarContainer />
+            <AvatarContainer setAvatar={setAvatar} avatar={avatar} />
           </div>
+          <br />
+          <br />
           <button type="submit">Create Account</button>
         </form>
-        <br />
         <br />
         <h4>Have an account? Login!</h4>
       </div>

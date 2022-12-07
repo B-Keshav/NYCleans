@@ -2,7 +2,7 @@ import React from "react";
 import AvatarIcon from "./AvatarIcon";
 import "./avatar.css"
 
-function AvatarContainer() {
+function AvatarContainer({setAvatar, avatar}) {
 
     const apple = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWU6o-k-mRkI-czpDRBw6O96ImgN5dun-W-WeRtxwxO2QBfJ0kLqKasuVUY6hPukil8yQ&usqp=CAU"
     const bin = "https://static.vecteezy.com/system/resources/previews/002/079/630/non_2x/recycle-green-bin-free-vector.jpg"
@@ -19,7 +19,7 @@ function AvatarContainer() {
 
     const iconsAsElements = iconArray.map(icon => {
         return (
-            <AvatarIcon icon={icon} key={icon}/>
+            <AvatarIcon icon={icon} key={icon} setAvatar={setAvatar} avatar={avatar}/>
         )
     })
 

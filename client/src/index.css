@@ -118,3 +118,7 @@ width: 100%;
   border-style: solid;
   width: 60px;
 }
+
+.avatarSelected {
+  position: relative; right: 60px; top: 48px;
+}
