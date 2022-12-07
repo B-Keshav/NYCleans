@@ -39,7 +39,7 @@ function Login({ onLogin }) {
     fetch("/signup", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         name: name,
@@ -63,7 +63,7 @@ function Login({ onLogin }) {
     fetch("/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         name: login.name,

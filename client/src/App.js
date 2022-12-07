@@ -19,9 +19,6 @@ function App() {
         if (r.ok) {
           r.json().then(user => setUser(user))
         }
-        else {
-          console.log(" :3   <-   cat ")
-        }
       })
   }, [])
 
