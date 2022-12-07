@@ -1,11 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom"
+import AvatarContainer from "./AvatarComponents/AvatarContainer"
 // import UserProfile from "./UserProfile";
 
 import { useState } from "react";
 
 function Login({ onLogin }) {
-  const [name, setName] = useState("")
+  const [username, setName] = useState("")
   const [age, setAge] = useState(0)
   const [password, setPassword] = useState("")
   const [bio, setBio] = useState("")
@@ -39,10 +40,10 @@ function Login({ onLogin }) {
     fetch("/signup", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify({
-        name: name,
+        username: username,
         age: age,
         password: password,
         bio: bio,
@@ -63,10 +64,10 @@ function Login({ onLogin }) {
     fetch("/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify({
-        name: login.name,
+        username: login.username,
         password: login.password
       })
     })
@@ -76,13 +77,13 @@ function Login({ onLogin }) {
   }
 
   return (
-    <div>
+    <div className="content">
       <div className="App">
         <form onSubmit={handleSubmit}>
           <div>
             <input
               name='name'
-              placeholder='Name'
+              placeholder='Username'
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -130,9 +131,13 @@ function Login({ onLogin }) {
               name="zip"
               onChange={(e) => setZip(e.target.value)}
             />
+            <AvatarContainer />
           </div>
           <button type="submit">Create Account</button>
         </form>
+        <br />
+        <br />
+        <h4>Have an account? Login!</h4>
       </div>
       <div> <form onSubmit={handleLogin}>
         <div>

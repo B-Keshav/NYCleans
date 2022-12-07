@@ -19,9 +19,6 @@ function App() {
         if (r.ok) {
           r.json().then(user => setUser(user))
         }
-        else {
-          console.log(" :3   <-   cat ")
-        }
       })
   }, [])
 
@@ -38,35 +35,24 @@ function App() {
   function onLogin(user) {
     setUser(user)
   }
+  
 
   return (
     <BrowserRouter>
     <div className='top-banner-text'><span className='top-banner'></span></div>
     <div className='logo_bar'>NYClean</div>
       <div className="App">
-        <Link to={"/"}>
-          <button>Home</button>
-        </Link>
-        <Link to={"/jobs"}>
-          <button>Jobs</button>
-        </Link>
-
-        <Link to={"/postajob"}>
-          <button>Post a Job</button>
-        </Link>
-        {user ?
-          <>
-            <button onClick={handleLogOut}>Sign Out</button>
-            <Link to="/profile">
-              <button>Profile</button>
-            </Link>
-          </>
-          :
-          <Link to={"/volunteers"}>
-            <button>Sign In/Create Account</button>
-          </Link>
-        }
-
+      <div className="sidebar">
+          <Link to={"/"} className="active">Home</Link>
+          <Link to={"/jobs"}>Jobs</Link>
+          <Link to={"/postajob"}>Post a Job</Link>
+           {user ?
+           <button onClick={handleLogOut}>Sign Out</button>
+           :
+            <Link to={"/volunteers"}>Volunteer</Link>
+           }
+        </div>
+   
         <Switch>
           <Route path="/volunteers" >
             <Login onLogin={onLogin} />

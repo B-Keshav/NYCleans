@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     lat = geocode_results.first.coordinates.first
     lng = geocode_results.first.coordinates.second
 
-    user = User.create!(name: params[:name], age: params[:age], password: params[:password], bio: params[:bio], organization_id: params[:organization_id], address: params[:address], city: params[:city], state: params[:state], zip: params[:zip], lng: lng, lat: lat)
+    user = User.create!(username: params[:username], age: params[:age], password: params[:password], bio: params[:bio], organization_id: params[:organization_id], address: params[:address], city: params[:city], state: params[:state], zip: params[:zip], lng: lng, lat: lat)
     session[:user_id] = user.id
     render json: user, serializer: UserAndLocationSerializerSerializer, status: :created
    end
@@ -32,6 +32,6 @@ class UsersController < ApplicationController
    private
 
    def user_params
-      params.permit(:name, :age, :password, :password_confirmation, :bio, :organization_id, :address, :city, :state, :zip)
+      params.permit(:username, :age, :password, :password_confirmation, :bio, :organization_id, :address, :city, :state, :zip)
    end
 end

@@ -1,3 +1,3 @@
 class UserAndLocationSerializerSerializer < ActiveModel::Serializer
-  attributes :id, :name, :age, :bio, :address, :city, :state, :zip
+  attributes :id, :username, :age, :bio, :address, :city, :state, :zip
 end
