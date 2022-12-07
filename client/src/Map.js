@@ -31,6 +31,7 @@ function Map() {
     }))
 
     return (
+        <div className="content">
         <div className="map">
             <h2 className="map-h2">Volunteer Opportunities near you!</h2>
             <div className="google-map">
@@ -43,6 +44,7 @@ function Map() {
                     {jobLocationArray}
                 </GoogleMapReact>
             </div>
+        </div>
         </div>
     )
 }

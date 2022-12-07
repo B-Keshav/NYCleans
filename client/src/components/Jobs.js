@@ -19,8 +19,9 @@ function Jobs () {
 }) 
 
     return (
-
+        <div className="content">
         <JobContainer jobs={filteredJobs} setSearch={setSearch}/>
+        </div>
     )
 }
 

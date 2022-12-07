@@ -76,7 +76,7 @@ function Login({ onLogin }) {
   }
 
   return (
-    <div>
+    <div className="content">
       <div className="App">
         <form onSubmit={handleSubmit}>
           <div>
