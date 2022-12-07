@@ -4,13 +4,18 @@ import './map.css'
 import GoogleMapReact from 'google-map-react'
 import loctag from "./images/LocationIcon.png"
 
-function Map() {
+function Map({ user }) {
     const [jobLocations, setJobLocations] = useState([])
-    const startLocation = {
-        address: '11 Broadway, New York City, NY 10004',
-        lat: 40.70521926879883,
-        lng: -74.01383209228516,
-    }
+    const [startLocation, setStartLocation] = useState({})
+
+    useEffect(() => {
+        if (user !== null) {
+            setStartLocation({
+                lat: user.lat,
+                lng: user.lng
+            })
+        }
+    }, [])
 
     useEffect(() => {
         fetch("/joblocations")
@@ -18,7 +23,7 @@ function Map() {
             .then(data => setJobLocations(data))
     }, []);
 
-    const jobLocationArray = jobLocations.map((location => {
+    const jobLocationArray = jobLocations.map(location => {
         return (
             <LocationPin
                 lat={location.lat}
@@ -28,7 +33,7 @@ function Map() {
                 key={location.address}
             />
         )
-    }))
+    })
 
     return (
         <div className="map">
@@ -37,7 +42,10 @@ function Map() {
             <div className="google-map">
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
-                    defaultCenter={startLocation}
+                    defaultCenter={{
+                        lat: 40.70541807766208,
+                        lng: -74.01397913050388
+                    }}
                     defaultZoom={17}
                     defaultOptions={{ fullscreenControl: false, zoomControl: false }}
                 >
