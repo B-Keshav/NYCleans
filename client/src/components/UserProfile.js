@@ -3,11 +3,11 @@ function UserProfile({ currentUser }) {
 
     console.log(currentUser)
 
-    const { name, age, bio, organization } = currentUser
+    const { username, age, bio, organization } = currentUser
     console.log(currentUser.jobs)
     const renderJobs = currentUser.jobs.map((job) => {
         return (
-            <div key={`${currentUser.name} ${job.job_name}`}>
+            <div key={`${currentUser.username} ${job.job_name}`}>
                 <h2>{job.job_name}</h2>
                 <img src={job.image} alt={job.job_name}/>
                 <p>{job.description}</p>
@@ -17,11 +17,11 @@ function UserProfile({ currentUser }) {
 
     return (
         <div>
-            <h1>Welcome {name}</h1>
+            <h1>Welcome {username}</h1>
             <div className="profile">
                 profile photo in the works
                 <br />
-                {name}
+                {username}
                 <br />
                 {age}
                 <br />
