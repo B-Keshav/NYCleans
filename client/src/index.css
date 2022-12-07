@@ -27,8 +27,6 @@ border-bottom: 2px solid rgb(16, 67, 13);
 transition: all 0.2s;
 width: 100%;
 }
-
-
 .jobContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -50,10 +48,60 @@ width: 100%;
   outline-color: #cfc4c4;
   outline-width: thin;
 }
-
 .jobImage {
   position: relative;
   max-width: 70%;
   max-height: 70%;
   margin: 3%;
+}
+
+/* Banner */
+.top-banner-text,
+.hidden {
+  font-family: "Magda", "sans-serif";
+  font-size: 15px;
+  line-height: 35px;
+  text-align: center;
+  background-color: #809c4c;
+  color: #ffffff;
+}
+.top-banner::before {
+  content: "NYClean is here!";
+  animation: animate infinite 7s;
+  padding-left: 10px;
+}
+@keyframes animate {
+
+  0% {
+    content: "Volunteer Today!";
+  }
+
+  45% {
+    content: "Help us keep our city clean.";
+  }
+
+  75% {
+    content: "Cleaning is caring!";
+  }
+}
+
+/* Logo Bar */
+.logo_bar {
+  line-height: 40px;
+  text-align: left;
+  background-color: #ecf3ed;
+  color: #100909;
+}
+
+/* Google Map */
+.google-map {
+  max-width: 600px;
+  max-height: 550px;
+  padding: 20px;
+}
+
+/* Volunteers */
+.volunteers {
+  max-width: 800px;
+  max-height: 400px;
 }
