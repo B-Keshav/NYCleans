@@ -16,9 +16,9 @@ bull = Location.create(address: "Charging Bull", city: "New York City", state: "
 bowl = Location.create(address: "Bowling Green", city: "New York City", state: "New York", zip: 10004, lng: -74.01365587537626, lat: 40.70398146200117)
 
 # USERS
-tim = User.create(name: "TimDaToolMan", age: 42, password: "butts", bio: "I am definitely NOT Tim Allen (I'm Tim Allen)", organization_id: org1.id)
-keshav = User.create(name: "BKeshav", age: 109, password: "keshav123", bio: "Snake behavior only", organization_id: org1.id)
-randy = User.create(name: "XxRandySavagexX", age: 22, password: "Randy123", bio: "I'm Randy Savage. I'll beat you up, yo.", organization_id: org1.id) 
+tim = User.create(name: "TimDaToolMan", age: 42, password: "butts", bio: "I am definitely NOT Tim Allen (I'm Tim Allen)", organization_id: org1.id, address: "115 W 74th St", city: "New York City", state: "NY", zip: 10023, lat: 40.77924657578605, lng: -73.978601335582)
+keshav = User.create(name: "BKeshav", age: 109, password: "keshav123", bio: "Snake behavior only", organization_id: org1.id, address: "Q2GH+8H", city: "New York City", state: "New York", zip: 10024, lat: 40.77589119042023, lng: -73.97104823501107)
+randy = User.create(name: "XxRandySavagexX", age: 22, password: "Randy123", bio: "I'm Randy Savage. I'll beat you up, yo.", organization_id: org1.id, address: "1229 1st Ave.", city: "New York", state: "NY", zip: 10065, lat: 40.764649904892224, lng: -73.9588812900012) 
 
 # JOBS
 
