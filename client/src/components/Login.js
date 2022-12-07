@@ -6,7 +6,7 @@ import AvatarContainer from "./AvatarComponents/AvatarContainer"
 import { useState } from "react";
 
 function Login({ onLogin }) {
-  const [name, setName] = useState("")
+  const [username, setName] = useState("")
   const [age, setAge] = useState(0)
   const [password, setPassword] = useState("")
   const [bio, setBio] = useState("")
@@ -18,7 +18,7 @@ function Login({ onLogin }) {
   const [avatar, setAvatar] = useState("")
 
   const [login, setLogin] = useState({
-    name: "",
+    username: "",
     password: "",
   })
 
@@ -44,7 +44,7 @@ function Login({ onLogin }) {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        name: name,
+        username: username,
         age: age,
         password: password,
         bio: bio,
@@ -69,7 +69,7 @@ function Login({ onLogin }) {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        name: login.name,
+        username: login.username,
         password: login.password
       })
     })
@@ -79,13 +79,13 @@ function Login({ onLogin }) {
   }
 
   return (
-    <div>
+    <div className="content">
       <div className="App">
         <form onSubmit={handleSubmit}>
           <div>
             <input
-              name='name'
-              placeholder='Name'
+              name='username'
+              placeholder='Username'
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -145,7 +145,7 @@ function Login({ onLogin }) {
       <div> <form onSubmit={handleLogin}>
         <div>
           <input
-            name='name'
+            name='username'
             placeholder='Name'
             onChange={handleChange}
           />
