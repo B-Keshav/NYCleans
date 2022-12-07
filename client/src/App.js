@@ -3,36 +3,62 @@ import Home from './components/Home';
 import Login from './components/Login'
 import Jobs from './components/Jobs';
 import PostJob from './PostJob';
+import UserProfile from './components/UserProfile';
 
 // import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [onLogin, setLogin] = useState([])
+  const [user, setUser] = useState(null)
 
-  
+  useEffect(() => {
+    fetch('/me')
+      .then(r => {
+        if (r.ok) {
+          r.json().then(user => setUser(user))
+        }
+      })
+  }, [])
+
+  function handleLogOut() {
+    fetch('/logout', {
+      method: "DELETE"
+    }).then(r => {
+      if (r.ok) {
+        setUser(null)
+      }
+    })
+  }
+
+  function onLogin(userId) {
+    setUser(userId)
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
-      <Link to={"/"}>
-        <button>Home</button>
-      </Link>
-      <Link to={"/jobs"}>
-        <button>Jobs</button>
-      </Link>
+        <Link to={"/"}>
+          <button>Home</button>
+        </Link>
+        <Link to={"/jobs"}>
+          <button>Jobs</button>
+        </Link>
 
-      <Link to={"/postajob"}>
-        <button>Post a Job</button>
-      </Link>
-      <Link to={"/volunteers"}>
-        <button>Sign In</button>
-
-      </Link>
+        <Link to={"/postajob"}>
+          <button>Post a Job</button>
+        </Link>
+        {user ?
+          <button onClick={handleLogOut}>Sign Out</button>
+          :
+          <Link to={"/volunteers"}>
+            <button>Sign In</button>
+          </Link>
+        }
         <Switch>
           <Route path="/volunteers" >
-            <Login onLogin={onLogin}/>
+            <Login onLogin={onLogin} />
           </Route>
           <Route path="/jobs">
             < Jobs />
@@ -40,8 +66,11 @@ function App() {
           <Route path="/postajob">
             < PostJob />
           </Route>
-          <Route path="/">
-            <Home/>
+          <Route path="/profile">
+            <UserProfile />
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </div>

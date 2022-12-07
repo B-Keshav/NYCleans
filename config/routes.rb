@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :volunteers
-  resources :users
+  resources :users, only: [:index, :create]
   resources :jobs, only: [:index, :show, :create, :update, :destroy]
   resources :locations, only: [:index, :show]
   resources :organizations
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/hello', to: 'application#hello_world'
 
   get '/joblocations', to: "jobs#job_locations"
+
+  get '/me', to: "users#show"
 
   # get '/locations/:id/jobs', to: "location#locationjobs"
 
