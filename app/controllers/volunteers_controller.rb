@@ -6,8 +6,8 @@ class VolunteersController < ApplicationController
     end
 
     # def show
-    #     volunteer = Volunteer.where(id: session[:user_id])
-    #     render json: volunteer.users
+    #     volunteer = Volunteer.where(id: session[:user_id], job_id: params[:jobID])
+    #     render json: volunteer, status: :ok
     # end
 
 
@@ -18,10 +18,16 @@ class VolunteersController < ApplicationController
 
 
     def destroy 
-        volunteer = Volunteer.find_by(job_id: params[:job_id]) && Volunteer.find_by(user_id: sessions[:id])
-        volunteer.delete 
+        volunteer = Volunteer.find_by(job_id: params[:job_id]) && Volunteer.find_by(user_id: session[:id])
+        volunteer.delete
         head :no_content
     end 
+
+    def findvolunteer
+        volunteer = Volunteer.where(user_id: session[:user_id], job_id: params[:jobID])
+        volunteer.delete_all 
+        head :no_content
+    end
 
     private
 

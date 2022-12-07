@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/myjobs', to: "users#my_jobs"
 
+  delete '/findvolunteer/:jobID', to: "volunteers#findvolunteer"
+
   get '*path',
       to: 'fallback#index',
       constraints: ->(req) { !req.xhr? && req.format.html? }
