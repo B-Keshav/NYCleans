@@ -35,30 +35,33 @@ function App() {
   function onLogin(user) {
     setUser(user)
   }
-  
+
 
   return (
     <BrowserRouter>
-    <div className='top-banner-text'><span className='top-banner'></span></div>
-    <div className='logo_bar'>NYClean</div>
+      <div className='top-banner-text'><span className='top-banner'></span></div>
+      <div className='logo_bar'>NYClean</div>
       <div className="App">
-      <div className="sidebar">
+        <div className="sidebar">
           <Link to={"/"} className="active">Home</Link>
           <Link to={"/jobs"}>Jobs</Link>
           <Link to={"/postajob"}>Post a Job</Link>
-           {user ?
-           <Link onClick={handleLogOut} to={"/logout"}>Sign Out</Link>
-           :
+          {user ?
+            <>
+              <Link onClick={handleLogOut} to={"/"}>Sign Out</Link>
+              <Link to={'/profile'}>Profile</Link>
+            </>
+            :
             <Link to={"/volunteers"}>Volunteer</Link>
-           }
+          }
         </div>
-   
+
         <Switch>
           <Route path="/volunteers" >
             <Login onLogin={onLogin} />
           </Route>
           <Route path="/jobs">
-            < Jobs user={user}/>
+            < Jobs user={user} />
           </Route>
           <Route path="/postajob">
             < PostJob />
@@ -67,7 +70,7 @@ function App() {
             <UserProfile currentUser={user} />
           </Route>
           <Route exact path="/">
-            <Home user={user}/>
+            <Home user={user} />
           </Route>
         </Switch>
       </div>
