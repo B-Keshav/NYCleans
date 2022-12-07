@@ -55,12 +55,18 @@ function App() {
           <button>Post a Job</button>
         </Link>
         {user ?
-          <button onClick={handleLogOut}>Sign Out</button>
+          <>
+            <button onClick={handleLogOut}>Sign Out</button>
+            <Link to="/profile">
+              <button>Profile</button>
+            </Link>
+          </>
           :
           <Link to={"/volunteers"}>
-            <button>Sign In</button>
+            <button>Sign In/Create Account</button>
           </Link>
         }
+
         <Switch>
           <Route path="/volunteers" >
             <Login onLogin={onLogin} />
@@ -72,7 +78,7 @@ function App() {
             < PostJob />
           </Route>
           <Route path="/profile">
-            <UserProfile />
+            <UserProfile currentUser={user} />
           </Route>
           <Route exact path="/">
             <Home user={user}/>
