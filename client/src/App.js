@@ -32,8 +32,8 @@ function App() {
     })
   }
 
-  function onLogin(userId) {
-    setUser(userId)
+  function onLogin(user) {
+    setUser(user)
   }
 
   return (
@@ -61,7 +61,7 @@ function App() {
             <Login onLogin={onLogin} />
           </Route>
           <Route path="/jobs">
-            < Jobs />
+            < Jobs user={user}/>
           </Route>
           <Route path="/postajob">
             < PostJob />

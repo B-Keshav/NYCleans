@@ -63,7 +63,7 @@ function Login({ onLogin }) {
       })
     })
       .then(res => res.json())
-      .then(data => onLogin(data.id))
+      .then(data => onLogin(data))
     history.push('/profile')
   }
 
