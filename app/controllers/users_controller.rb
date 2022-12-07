@@ -4,6 +4,11 @@ class UsersController < ApplicationController
    def index
       render json: User.all
    end
+   
+   def show
+      user = User.find_by(id: session[:user_id])
+      render json: user
+   end
 
    def create
     #Getting the user's address to be one string
@@ -19,12 +24,6 @@ class UsersController < ApplicationController
     render json: user, serializer: UserAndLocationSerializerSerializer, status: :created
    end
 
-   def show
-      user = User.find_by(id: session[:user_id])
-      render json: user
-   end
-
-   
    private
 
    def user_params
