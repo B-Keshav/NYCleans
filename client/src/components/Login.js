@@ -17,7 +17,7 @@ function Login({ onLogin }) {
   const [zip, setZip] = useState(null)
 
   const [login, setLogin] = useState({
-    name: "",
+    username: "",
     password: "",
   })
 
@@ -82,7 +82,7 @@ function Login({ onLogin }) {
         <form onSubmit={handleSubmit}>
           <div>
             <input
-              name='name'
+              name='username'
               placeholder='Username'
               onChange={(e) => setName(e.target.value)}
             />
@@ -142,7 +142,7 @@ function Login({ onLogin }) {
       <div> <form onSubmit={handleLogin}>
         <div>
           <input
-            name='name'
+            name='username'
             placeholder='Name'
             onChange={handleChange}
           />
