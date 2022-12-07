@@ -8,37 +8,32 @@ function UserProfile({ currentUser }) {
     console.log(currentUser.jobs)
     const renderJobs = currentUser.jobs.map((job) => {
         return (
-            <div key={`${currentUser.username} ${job.job_name}`}>
+         <>
+            <li key={`${currentUser.username} ${job.job_name}`}className="profileJobs">
                 <h2>{job.job_name}</h2>
                 <img src={job.image} alt={job.job_name}/>
                 <p>{job.description}</p>
-            </div>
+            </li>
+            <br></br>
+            </>
         )
     })
 
     return (
-        <div>
+        <div className="profile">
             <h1>Welcome {username}</h1>
-            <div className="profile">
-                profile photo in the works
+            <div>
+                <img src={currentUser.avatar} alt="avatar" className={"profilePicture"}/>
                 <br />
-                {username}
-                <br />
-                {age}
-                <br />
-                {bio}
-                <br />
-                {organization.name}
-                <br />
-                {organization.city}
-                <br />
-                {organization.description}
-                <br />
-                {organization.non_profit}
+                <h4 className="username">{username}</h4>
+                <p><strong>Age:</strong> {age}</p>
+                <p><strong>Bio:</strong> {bio}</p>
+                <p><strong>Organization Affiliation:</strong> {organization.name}</p>
+                <p><strong>Based in:</strong> {organization.city}</p>
             </div>
             <div>
                 <h1>Current Jobs</h1>
-                {renderJobs}
+                <ul>{renderJobs}</ul>
             </div>
         </div>
     )

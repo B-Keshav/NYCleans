@@ -124,6 +124,27 @@ width: 100%;
   position: relative; right: 60px; top: 48px;
 }
 
+/* PROFILE STYLING */
+.profile {
+  display: inline-block;
+  text-align: left;
+}
+
+.profilePicture {
+  width: 120px;
+  border-style: solid;
+}
+
+.profileJobs {
+  background-color: #809c4c;
+  width: 400px;
+  list-style: none;
+}
+
+.profileJobs img {
+  width: 400px;
+}
+
 
 /* Side Bar */
 .sidebar {
