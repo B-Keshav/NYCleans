@@ -47,7 +47,7 @@ function Map({ user }) {
     })
 
 
-    
+
     return (
         <div className="map">
             <h2 className="map-h2">Volunteer Opportunities near you!</h2>

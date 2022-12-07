@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom"
+import AvatarContainer from "./AvatarComponents/AvatarContainer"
 // import UserProfile from "./UserProfile";
 
 import { useState } from "react";
@@ -130,9 +131,13 @@ function Login({ onLogin }) {
               name="zip"
               onChange={(e) => setZip(e.target.value)}
             />
+            <AvatarContainer />
           </div>
           <button type="submit">Create Account</button>
         </form>
+        <br />
+        <br />
+        <h4>Have an account? Login!</h4>
       </div>
       <div> <form onSubmit={handleLogin}>
         <div>
