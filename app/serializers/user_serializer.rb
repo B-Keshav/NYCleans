@@ -1,4 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :age, :bio, :address, :city, :state, :zip
+  attributes :id, :name, :age, :bio, 
+
   has_one :organization
 end
