@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-function AvatarIcon ({icon}) {
-    return(
-        <div className="avatarCard">
-        <img src={icon} className="avatarIcon" />
-        </div>
+function AvatarIcon({ icon, setAvatar, avatar }) {
+    const [divStyle, setDivStyle] = useState({
+        borderColor: "black"
+    })
+
+    return (
+        <>
+            <div className="avatarCard" style={divStyle}>
+
+                <img src={icon} className="avatarIcon" alt={icon} onClick={e => setAvatar(icon)} />
+                {
+                avatar === icon ?
+                    <p className="avatarSelected">Selected</p>
+                    : null
+            }
+            </div>
+
+        </>
     )
 }
 
