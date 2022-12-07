@@ -8,6 +8,7 @@ import UserProfile from './components/UserProfile';
 // import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import Organization from './components/Organization';
 
 function App() {
 
@@ -46,10 +47,11 @@ function App() {
           <Link to={"/"} className="active">Home</Link>
           <Link to={"/jobs"}>Jobs</Link>
           <Link to={"/postajob"}>Post a Job</Link>
+          <Link to={"/organizations"}>Organizations</Link>
           {user ?
             <>
-              <Link onClick={handleLogOut} to={"/"}>Sign Out</Link>
               <Link to={'/profile'}>Profile</Link>
+              <Link onClick={handleLogOut} to={"/"}>Sign Out</Link>
             </>
             :
             <Link to={"/volunteers"}>Volunteer</Link>
@@ -68,6 +70,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <UserProfile currentUser={user} />
+          </Route>
+          <Route path='/organizations'>
+            <Organization />
           </Route>
           <Route exact path="/">
             <Home user={user} />

@@ -8,7 +8,12 @@
 
 
 # ORGANIZATIONS
-org1 = Organization.create(name: "Manhattan Clean Up Initiative", city: "NYC", description: "Making Manhattan cleaner one day at a time", non_profit: true)
+org1 = Organization.create(name: "None", city: "N/A", description: "N/A", non_profit: false)
+org2 = Organization.create(name: "Manhattan Clean Up Initiative", city: "NYC", description: "Making Manhattan cleaner one day at a time", non_profit: true)
+org3 = Organization.create(name: "Rats be Gone", city: "NYC", description: "Rats worse enemies", non_profit: false)
+org4 = Organization.create(name: "Clean up These Streets", city: "NYC", description: "Making these streets one way or another", non_profit: true)
+org5 = Organization.create(name: "Small Keys", city: "NYC", description: "We make sure there are no small keys anywehre", non_profit: true)
+org6 = Organization.create(name: "Tiny Hands", city: "NYC", description: "We got tiny hands", non_profit: false)
 
 # LOCATIONS
 bat = Location.create(address: "Battery Park", city: "New York City", state: "New York", zip: 10004, lng: -74.01540701310614, lat: 40.70291834474795) 
@@ -16,9 +21,9 @@ bull = Location.create(address: "Charging Bull", city: "New York City", state: "
 bowl = Location.create(address: "Bowling Green", city: "New York City", state: "New York", zip: 10004, lng: -74.01365587537626, lat: 40.70398146200117)
 
 # USERS
-tim = User.create(username: "TimDaToolMan", age: 42, password: "butts", bio: "I am definitely NOT Tim Allen (I'm Tim Allen)", organization_id: org1.id, address: "115 W 74th St", city: "New York City", state: "NY", zip: 10023, lat: 40.77924657578605, lng: -73.978601335582)
-keshav = User.create(username: "BKeshav", age: 109, password: "keshav123", bio: "Snake behavior only", organization_id: org1.id, address: "Q2GH+8H", city: "New York City", state: "New York", zip: 10024, lat: 40.77589119042023, lng: -73.97104823501107)
-randy = User.create(username: "XxRandySavagexX", age: 22, password: "Randy123", bio: "I'm Randy Savage. I'll beat you up, yo.", organization_id: org1.id, address: "1229 1st Ave.", city: "New York", state: "NY", zip: 10065, lat: 40.764649904892224, lng: -73.9588812900012) 
+tim = User.create(username: "TimDaToolMan", age: 42, password: "butts", bio: "I am definitely NOT Tim Allen (I'm Tim Allen)", organization_id: org2.id, address: "115 W 74th St", city: "New York City", state: "NY", zip: 10023, lat: 40.77924657578605, lng: -73.978601335582)
+keshav = User.create(username: "BKeshav", age: 109, password: "keshav123", bio: "Snake behavior only", organization_id: org2.id, address: "Q2GH+8H", city: "New York City", state: "New York", zip: 10024, lat: 40.77589119042023, lng: -73.97104823501107)
+randy = User.create(username: "XxRandySavagexX", age: 22, password: "Randy123", bio: "I'm Randy Savage. I'll beat you up, yo.", organization_id: org2.id, address: "1229 1st Ave.", city: "New York", state: "NY", zip: 10065, lat: 40.764649904892224, lng: -73.9588812900012) 
 
 # JOBS
 

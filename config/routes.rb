@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create]
   resources :jobs, only: [:index, :show, :create, :update, :destroy]
   resources :locations, only: [:index, :show]
-  resources :organizations
+  resources :organizations, only: [:index, :show]
 
   post '/signup', to: "users#create"
   get '/me', to: 'users#show'

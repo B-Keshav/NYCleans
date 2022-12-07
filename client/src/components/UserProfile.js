@@ -1,11 +1,11 @@
 function UserProfile({ currentUser }) {
-    console.log(currentUser)
+    
     if (!currentUser) return <h1>Loading...</h1>
 
-    
-
     const { username, age, bio, organization } = currentUser
-    console.log(currentUser.jobs)
+
+    console.log(organization)
+
     const renderJobs = currentUser.jobs.map((job) => {
         return (
             <div key={`${currentUser.username} ${job.job_name}`}>

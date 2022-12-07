@@ -1,6 +1,5 @@
-
-
 class JobsController < ApplicationController
+    # skip_before_action :authorize, only: [:index, :job_locations]
 
     def index 
         render json: Job.all
