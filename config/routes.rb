@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :volunteers
+  resources :volunteers, only: [:create, :destroy, :index, :show]
   resources :users, only: [:index, :create]
   resources :jobs, only: [:index, :show, :create, :update, :destroy]
   resources :locations, only: [:index, :show]
@@ -15,8 +15,7 @@ Rails.application.routes.draw do
 
   get '/joblocations', to: "jobs#job_locations"
 
- 
-  # get '/locations/:id/jobs', to: "location#locationjobs"
+  get '/myjobs', to: "users#my_jobs"
 
   get '*path',
       to: 'fallback#index',

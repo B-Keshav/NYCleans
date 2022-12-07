@@ -51,22 +51,22 @@ function App() {
             <a><Link to={"/volunteers"}>Volunteer</Link></a>
            }
         </div>
-      
+   
         <Switch>
           <Route path="/volunteers" >
             <Login onLogin={onLogin} />
           </Route>
           <Route path="/jobs">
-            < Jobs />
+            < Jobs user={user}/>
           </Route>
           <Route path="/postajob">
             < PostJob />
           </Route>
           <Route path="/profile">
-            <UserProfile />
+            <UserProfile currentUser={user} />
           </Route>
           <Route exact path="/">
-            <Home />
+            <Home user={user}/>
           </Route>
         </Switch>
       </div>

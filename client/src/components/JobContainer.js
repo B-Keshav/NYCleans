@@ -2,13 +2,18 @@ import JobCard from "./JobCard";
 // import { useState, useEffect } from "react";
 import Search from "./Search";
 
-function JobContainer ({jobs, setSearch}){
+function JobContainer ({jobs, setSearch, user}){
+
+
+    
+   
 
 
   const jobsArray = jobs.map(job=> {
-    return <JobCard name={job.job_name} location={job.location} desc={job.description} key={job.id} image={job.image}/>
-   
+   return <JobCard job={job} key={job.id} user={user}/>
   })
+
+
 
   
     return (
