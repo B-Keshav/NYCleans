@@ -1,7 +1,8 @@
 function UserProfile({ currentUser }) {
+    console.log(currentUser)
     if (!currentUser) return <h1>Loading...</h1>
 
-    console.log(currentUser)
+    
 
     const { username, age, bio, organization } = currentUser
     console.log(currentUser.jobs)
