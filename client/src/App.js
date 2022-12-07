@@ -47,7 +47,7 @@ function App() {
           <Link to={"/jobs"}>Jobs</Link>
           <Link to={"/postajob"}>Post a Job</Link>
            {user ?
-           <button onClick={handleLogOut}>Sign Out</button>
+           <Link onClick={handleLogOut} to={"/logout"}>Sign Out</Link>
            :
             <Link to={"/volunteers"}>Volunteer</Link>
            }
