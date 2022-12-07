@@ -10,6 +10,10 @@ function Login({ onLogin }) {
   const [password, setPassword] = useState("")
   const [bio, setBio] = useState("")
   const [org, setOrg] = useState(1)
+  const [address, setAddress] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  const [zip, setZip] = useState(null)
 
   const [login, setLogin] = useState({
     name: "",
@@ -43,11 +47,15 @@ function Login({ onLogin }) {
         password: password,
         bio: bio,
         organization_id: org,
+        address: address,
+        city: city,
+        state: state,
+        zip: zip
       }),
     })
       .then((r) => r.json())
       .then((res) => handleResponse(res));
-      history.push('/profile')
+    history.push('/profile')
   }
 
   function handleLogin(e) {
@@ -97,6 +105,30 @@ function Login({ onLogin }) {
               name='org'
               placeholder='Organization'
               onChange={(e) => setOrg(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Street Address"
+              name="address"
+              onChange={(e) => setAddress(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="City"
+              name="city"
+              onChange={(e) => setCity(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="State"
+              name="state"
+              onChange={(e) => setState(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Zip Code"
+              name="zip"
+              onChange={(e) => setZip(e.target.value)}
             />
           </div>
           <button type="submit">Create Account</button>

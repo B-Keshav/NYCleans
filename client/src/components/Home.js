@@ -1,12 +1,12 @@
 import Map from "../Map";
 import About from "./About";
 
-function Home (){
+function Home ({user}){
 
     return (
         <>
         < About /> 
-        < Map />
+        < Map user={user}/>
         </>
     )
     
