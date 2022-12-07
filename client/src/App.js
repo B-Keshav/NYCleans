@@ -19,6 +19,9 @@ function App() {
         if (r.ok) {
           r.json().then(user => setUser(user))
         }
+        else {
+          console.log(" :3   <-   cat ")
+        }
       })
   }, [])
 
@@ -38,6 +41,8 @@ function App() {
 
   return (
     <BrowserRouter>
+    <div className='top-banner-text'><span className='top-banner'></span></div>
+    <div className='logo_bar'>NYClean</div>
       <div className="App">
         <Link to={"/"}>
           <button>Home</button>
@@ -76,7 +81,7 @@ function App() {
             <UserProfile currentUser={user} />
           </Route>
           <Route exact path="/">
-            <Home />
+            <Home user={user}/>
           </Route>
         </Switch>
       </div>
