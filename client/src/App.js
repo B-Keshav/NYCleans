@@ -35,20 +35,21 @@ function App() {
   function onLogin(user) {
     setUser(user)
   }
+  
 
   return (
     <BrowserRouter>
     <div className='top-banner-text'><span className='top-banner'></span></div>
     <div className='logo_bar'>NYClean</div>
       <div className="App">
-      <div class="sidebar">
-          <a><Link to={"/"} class="active">Home</Link></a>
-          <a><Link to={"/jobs"}>Jobs</Link></a>
-          <a><Link to={"/postajob"}>Post a Job</Link></a>
+      <div className="sidebar">
+          <Link to={"/"} className="active">Home</Link>
+          <Link to={"/jobs"}>Jobs</Link>
+          <Link to={"/postajob"}>Post a Job</Link>
            {user ?
            <button onClick={handleLogOut}>Sign Out</button>
            :
-            <a><Link to={"/volunteers"}>Volunteer</Link></a>
+            <Link to={"/volunteers"}>Volunteer</Link>
            }
         </div>
    
