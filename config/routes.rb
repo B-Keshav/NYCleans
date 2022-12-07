@@ -15,8 +15,7 @@ Rails.application.routes.draw do
 
   get '/joblocations', to: "jobs#job_locations"
 
-  get '/me', to: "users#show"
-
+ 
   # get '/locations/:id/jobs', to: "location#locationjobs"
 
   get '*path',
