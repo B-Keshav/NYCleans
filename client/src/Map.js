@@ -6,16 +6,27 @@ import loctag from "./images/LocationIcon.png"
 
 function Map({ user }) {
     const [jobLocations, setJobLocations] = useState([])
-    const [startLocation, setStartLocation] = useState({})
 
-    useEffect(() => {
-        if (user !== null) {
-            setStartLocation({
-                lat: user.lat,
-                lng: user.lng
-            })
-        }
-    }, [])
+    // THIS IS CODE THAT WE'LL USE TO DYNAMICALLY SET THE CENTER OF THE MAP
+    // BUT IT'S NOT WORKING RIGHT NOW. WILL IMPLEMENT LATER
+    // --HARRISON :)
+
+    // const [startLocation, setStartLocation] = useState({})
+
+    // useEffect(() => {
+    //     if (user !== null) {
+    //         setStartLocation({
+    //             lat: user.lat,
+    //             lng: user.lng
+    //         })
+    //     }
+    //     else {
+    //         setStartLocation({
+    //             lat: 40.70541807766208,
+    //             lng: -74.01397913050388
+    //         })
+    //     }
+    // }, [])
 
     useEffect(() => {
         fetch("/joblocations")
@@ -35,13 +46,15 @@ function Map({ user }) {
         )
     })
 
+
+    
     return (
         <div className="map">
             <h2 className="map-h2">Volunteer Opportunities near you!</h2>
             <div className="google-map">
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
-                    defaultCenter={{
+                    center={{
                         lat: 40.70541807766208,
                         lng: -74.01397913050388
                     }}
