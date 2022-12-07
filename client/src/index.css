@@ -180,4 +180,13 @@ div.content {
     text-align: center;
     float: none;
   }
+
+}
+
+.orgs_page_box{
+  text-align: left;
+  width: 500px;
+  border: 1px solid white;
+  position: relative;
+  margin-left: 25%;
 }
