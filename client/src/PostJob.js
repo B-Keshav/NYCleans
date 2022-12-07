@@ -60,7 +60,6 @@ function PostJob() {
                 <button type="submit">Submit Job</button>
             </form>
 
-
         </div>
     )
 }
