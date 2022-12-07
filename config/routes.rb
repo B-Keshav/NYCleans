@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :volunteers
-  resources :users
+  resources :users, only: [:index, :create]
   resources :jobs, only: [:index, :show, :create, :update, :destroy]
   resources :locations, only: [:index, :show]
   resources :organizations
@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   post '/signup', to: "users#create"
   get '/me', to: 'users#show'
 
-  post '/login', to: 'session#create'
+  post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
   get '/hello', to: 'application#hello_world'
 
   get '/joblocations', to: "jobs#job_locations"
+
+  get '/me', to: "users#show"
+
+  # get '/locations/:id/jobs', to: "location#locationjobs"
 
   get '*path',
       to: 'fallback#index',

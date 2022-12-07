@@ -6,7 +6,12 @@ class LocationsController < ApplicationController
 
     def show
         location = Location.find(params[:id])
-        render json: location
+        render json: location, serializer: LocationJobSerializer
     end
+
+    # def locationjobs
+    #     location = Location.find(params[:id])
+    #     render json: location, status: :ok
+    # end
 
 end
