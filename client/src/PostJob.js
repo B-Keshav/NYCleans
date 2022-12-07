@@ -23,7 +23,7 @@ function PostJob() {
 
 
     return (
-        <div>
+        <div className="content">
             <h1>Post a Job!</h1>
 
             <form onSubmit={handleSubmit}>

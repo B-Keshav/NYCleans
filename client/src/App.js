@@ -41,29 +41,17 @@ function App() {
     <div className='top-banner-text'><span className='top-banner'></span></div>
     <div className='logo_bar'>NYClean</div>
       <div className="App">
-        <Link to={"/"}>
-          <button>Home</button>
-        </Link>
-        <Link to={"/jobs"}>
-          <button>Jobs</button>
-        </Link>
-
-        <Link to={"/postajob"}>
-          <button>Post a Job</button>
-        </Link>
-        {user ?
-          <>
-            <button onClick={handleLogOut}>Sign Out</button>
-            <Link to="/profile">
-              <button>Profile</button>
-            </Link>
-          </>
-          :
-          <Link to={"/volunteers"}>
-            <button>Sign In/Create Account</button>
-          </Link>
-        }
-
+      <div class="sidebar">
+          <a><Link to={"/"} class="active">Home</Link></a>
+          <a><Link to={"/jobs"}>Jobs</Link></a>
+          <a><Link to={"/postajob"}>Post a Job</Link></a>
+           {user ?
+           <button onClick={handleLogOut}>Sign Out</button>
+           :
+            <a><Link to={"/volunteers"}>Volunteer</Link></a>
+           }
+        </div>
+   
         <Switch>
           <Route path="/volunteers" >
             <Login onLogin={onLogin} />
