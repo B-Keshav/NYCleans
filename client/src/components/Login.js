@@ -17,7 +17,7 @@ function Login({ onLogin }) {
   const [zip, setZip] = useState(null)
 
   const [login, setLogin] = useState({
-    name: "",
+    username: "",
     password: "",
   })
 
@@ -143,7 +143,7 @@ function Login({ onLogin }) {
         <div>
           <input
             name='username'
-            placeholder='Username'
+            placeholder='Name'
             onChange={handleChange}
           />
           <input

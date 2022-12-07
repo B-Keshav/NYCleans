@@ -20,7 +20,7 @@ class JobsController < ApplicationController
         location = Location.create(address: job_address, lat: geocode_results.first.coordinates.first, lng: geocode_results.first.coordinates.second)
         puts location.lat 
 
-        job = Job.create!(location_id: location.id, description: params[:description], job_name: params[:jobName])
+        job = Job.create!(location_id: location.id, description: params[:description], job_name: params[:jobName], image: params[:image])
         # render json: job, status: :created
         render json: job, include: :location, status: :ok 
     end

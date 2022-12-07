@@ -37,7 +37,7 @@ function UserProfile({ currentUser }) {
                 {organization.non_profit}
             </div>
             <div>
-                <h1>Curent Jobs</h1>
+                <h1>Current Jobs</h1>
                 {renderJobs}
             </div>
         </div>
