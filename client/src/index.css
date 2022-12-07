@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+/* Formatting jobs  */
+.searchBar {
+  text-align: left;
+  padding: 4px;
+}
+
 .jobContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
