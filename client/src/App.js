@@ -72,7 +72,7 @@ function App() {
             <Login onLogin={onLogin} />
           </Route>
           <Route path="/jobs">
-            < Jobs />
+            < Jobs user={user}/>
           </Route>
           <Route path="/postajob">
             < PostJob />

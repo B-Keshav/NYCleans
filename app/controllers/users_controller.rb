@@ -24,6 +24,11 @@ class UsersController < ApplicationController
     render json: user, serializer: UserAndLocationSerializerSerializer, status: :created
    end
 
+   def my_jobs
+    user = User.find_by(id: session[:user_id])
+      render json: user.volunteers
+   end
+   
    private
 
    def user_params

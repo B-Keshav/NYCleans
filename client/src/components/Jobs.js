@@ -1,7 +1,7 @@
 import JobContainer from "./JobContainer";
 import { useState, useEffect } from "react";
 
-function Jobs () {
+function Jobs ({user}) {
  const [jobs, setJobs] = useState([])
  const [search, setSearch] = useState("")
 
@@ -20,7 +20,7 @@ function Jobs () {
 
     return (
 
-        <JobContainer jobs={filteredJobs} setSearch={setSearch}/>
+        <JobContainer jobs={filteredJobs} setSearch={setSearch} user={user}/>
     )
 }
 
