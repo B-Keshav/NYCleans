@@ -19,6 +19,9 @@ function App() {
         if (r.ok) {
           r.json().then(user => setUser(user))
         }
+        else {
+          console.log(" :3   <-   cat ")
+        }
       })
   }, [])
 
@@ -70,7 +73,7 @@ function App() {
             <UserProfile />
           </Route>
           <Route exact path="/">
-            <Home />
+            <Home user={user}/>
           </Route>
         </Switch>
       </div>
