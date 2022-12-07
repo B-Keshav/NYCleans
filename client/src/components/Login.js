@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import UserProfile from "./UserProfile";
+import React from "react";
+import { useHistory } from "react-router-dom"
+// import UserProfile from "./UserProfile";
 
 import { useState } from "react";
 
-function Login() {
+function Login({ onLogin }) {
   const [name, setName] = useState("")
   const [age, setAge] = useState(0)
   const [password, setPassword] = useState("")
@@ -19,12 +20,13 @@ function Login() {
     alert(res.errors)
   }
 
+  let history = useHistory()
+
   function handleChange(e) {
     const { name, value } = e.target
     setLogin({
       ...login, [name]: value
     })
-    console.log(login)
   }
 
 
@@ -45,6 +47,7 @@ function Login() {
     })
       .then((r) => r.json())
       .then((res) => handleResponse(res));
+      history.push('/profile')
   }
 
   function handleLogin(e) {
@@ -60,8 +63,8 @@ function Login() {
       })
     })
       .then(res => res.json())
-      .then(data => console.log(data))
-
+      .then(data => onLogin(data.id))
+    history.push('/profile')
   }
 
   return (
@@ -76,6 +79,7 @@ function Login() {
             />
             <input
               name='password'
+              type="password"
               placeholder='Password'
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -107,6 +111,7 @@ function Login() {
           />
           <input
             name='password'
+            type="password"
             placeholder='Password'
             onChange={handleChange}
           />
