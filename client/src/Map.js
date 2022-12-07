@@ -47,7 +47,7 @@ function Map({ user }) {
     })
 
 
-    
+
     return (
         <div className="content">
         <div className="map">
