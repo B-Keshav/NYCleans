@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* MAP JOB CARDS (FOR MAP CARDS ONLY) */
+
+.mapJobCard {
+  height: 100px;
+  width: auto;
+  position: relative;
+  background-color:#61dafb;
+  z-index: 1;
+  border-style: solid;
+}
+
+.mapJobDesc {
+  position: relative;
+  background-color:#61dafb;
+  border-style: solid;
+}
