@@ -24,6 +24,7 @@ function Map() {
                 lat={location.lat}
                 lng={location.lng}
                 text={location.address}
+                id={location.id}
             />
         )
     }))
