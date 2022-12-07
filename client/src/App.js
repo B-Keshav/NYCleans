@@ -38,6 +38,8 @@ function App() {
 
   return (
     <BrowserRouter>
+    <div className='top-banner-text'><span className='top-banner'></span></div>
+    <div className='logo_bar'>NYClean</div>
       <div className="App">
         <Link to={"/"}>
           <button>Home</button>

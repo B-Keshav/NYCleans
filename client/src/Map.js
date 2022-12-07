@@ -32,8 +32,7 @@ function Map() {
 
     return (
         <div className="map">
-            <h2 className="map-h2">Look for Volunteer Opportunities near you!</h2>
-
+            <h2 className="map-h2">Volunteer Opportunities near you!</h2>
             <div className="google-map">
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
