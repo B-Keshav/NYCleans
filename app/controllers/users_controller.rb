@@ -4,6 +4,11 @@ class UsersController < ApplicationController
    def index
       render json: User.all
    end
+   
+   def show
+      user = User.find_by(id: session[:user_id])
+      render json: user
+   end
 
    def create
     #Getting the user's address to be one string
@@ -17,11 +22,6 @@ class UsersController < ApplicationController
     user = User.create!(name: params[:name], age: params[:age], password: params[:password], bio: params[:bio], organization_id: params[:organization_id], address: params[:address], city: params[:city], state: params[:state], zip: params[:zip], lng: lng, lat: lat)
     session[:user_id] = user.id
     render json: user, serializer: UserAndLocationSerializerSerializer, status: :created
-   end
-
-   def show
-      user = User.find_by(id: session[:user_id])
-      render json: user
    end
 
    def my_jobs

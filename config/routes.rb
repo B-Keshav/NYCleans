@@ -17,9 +17,6 @@ Rails.application.routes.draw do
 
   get '/myjobs', to: "users#my_jobs"
 
- 
-  # get '/locations/:id/jobs', to: "location#locationjobs"
-
   get '*path',
       to: 'fallback#index',
       constraints: ->(req) { !req.xhr? && req.format.html? }
