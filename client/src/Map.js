@@ -39,14 +39,8 @@ function Map() {
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
                     defaultCenter={startLocation}
                     defaultZoom={17}
-                    defaultOptions={{fullscreenControl: false, zoomControl : false}}
+                    defaultOptions={{ fullscreenControl: false, zoomControl: false }}
                 >
-
-                    {/* <LocationPin
-                        lat={startLocation.lat}
-                        lng={startLocation.lng}
-                        text={startLocation.address}
-                    /> */}
                     {jobLocationArray}
                 </GoogleMapReact>
             </div>
