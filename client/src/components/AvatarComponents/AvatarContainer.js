@@ -24,8 +24,8 @@ function AvatarContainer({setAvatar, avatar}) {
     })
 
     return (
-        <div>
-            <h5>Select an Avatar</h5>
+        <div className="avatarDiv">
+            <h5>Select Your Avatar</h5>
             {iconsAsElements}
         </div>
     )

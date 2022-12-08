@@ -6,8 +6,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: FoundersGrotesk, sans-serif;
 }
 
 /* Formatting jobs  */
@@ -38,15 +37,15 @@ border-bottom: 2px solid rgb(16, 67, 13);
 transition: all 0.2s;
 width: 100%;
 }
-/* .content {
-  padding-top: 10%
-} */
+
 .content h1 {
-  margin-top: 3%;
+  /* margin-top: 3%; */
   text-align: center;
+  padding: 15px;
+  background-color: #c7eafb;
 }
 
-form input {
+/* form input {
 margin-left: 25%;
 padding: 0.25rem;
 border: none;
@@ -56,17 +55,18 @@ border-bottom: 2px solid rgb(16, 67, 13);
 transition: all 0.2s;
 width: 50%;
 text-align: center;
-}
+} */
 .submitJob {
   margin-left: 46%;
   margin-top: 2%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 19px;
-  color: #6fa249;
+  color: #467D3D;
   background: none;
   text-decoration: underline;
   border: none;
 }
+
 
 /* .content {
   display: block;
@@ -85,6 +85,7 @@ width: 50%;
 text-align: center;
 } */
 
+
 .jobContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -98,14 +99,26 @@ text-align: center;
 .jobCard {
   display: block;
   justify-content: center;
-  background-color: aliceblue;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  background-color: #c7eafb94;
+  max-width: 94%;
+  /* margin-left: auto;
+  margin-right: auto; */
   margin-top: 4%;
-  outline-style: double;
-  outline-color: #cfc4c4;
-  outline-width: thin;
+  color: #1A1F0F;
+  border-radius: 1.5%;
+}
+.jobLoc {
+  font-size: large;
+  font-weight: 400;
+}
+.jobCard p {
+margin-left: 3%;
+margin-right: 3%;
+font-weight: 500;
+}
+.jobCard h2{
+  color: #162807;
 }
 
 .jobImage {
@@ -113,6 +126,26 @@ text-align: center;
   max-width: 70%;
   max-height: 70%;
   margin: 3%;
+  border-radius: 1.5%;
+}
+
+.jobButton {
+  font-family: FoundersGrotesk, sans-serif;
+  font-size: 19px;
+  color: white;
+  background: #00aeef;
+  text-decoration: none;
+  border-radius: 800px;
+  border: none;
+  margin: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.jobButton:hover{
+  font-size: 20px;
+  background-color: #0190c4
 }
 
 /* Banner */
@@ -122,9 +155,11 @@ text-align: center;
   font-size: 15px;
   line-height: 30px;
   text-align: center;
+
   background-color: #809c4c;
   color: black;
   font-weight:bold;
+
 }
 
 .top-banner::before {
@@ -152,9 +187,12 @@ text-align: center;
 .logo_bar {
   line-height: 40px;
   text-align: left;
+  padding-left: 16px;;
   background-color: #ecf3ed;
   color: #100909;
   font-family: arial, sans-serif;
+  font-size: large;
+  font-weight: 700;
 }
 
 /* Google Map */
@@ -172,6 +210,18 @@ text-align: center;
 
 
 /* Avatar selection icons */
+/* .avatarDiv {
+  margin-top: 9px;
+  margin-left: 6.5%;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+} */
+.avatarDiv h5{
+  font-size: large;
+}
 .avatarIcon {
   width: 60px;
   border-style: solid;
@@ -180,9 +230,11 @@ text-align: center;
 
 .avatarCard {
   display: inline-flex;
+  align-self: flex-end;
+  align-items: center; 
   margin: 10px;
   width: 60px;
-  height: 65px;
+
 }
 
 .avatarSelected {
@@ -221,7 +273,7 @@ text-align: center;
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
-  position: fixed;
+  position: absolute;
   height: 100%;
   overflow: auto;
 }
@@ -236,7 +288,7 @@ text-align: center;
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: #04AA6D;
+  background-color: #376312;
   color: white
 }
 
@@ -287,10 +339,94 @@ div.content {
   margin-left: 25%;
 }
 
+
+#signUpLogin {
+  display: grid;
+  grid-template-areas: 
+  "h" "h" 
+  "a" "b";
+  /* height: 400px; 
+  background-color: #f2f1f1; */
+  grid-template-columns: 2fr 2fr;
+}
+.signDiv {
+  margin-left: 4%;
+}
+
+.signUpForm {
+  font-family: sans-serif;
+  grid-area: "a";
+  font-size: large;
+  /* padding-top: 15px; */
+  margin-left: 30%;
+  margin-right: 5%;
+  /* margin-top: 10%; */
+  margin-bottom: 20%;
+  /* background-color: white;
+  text-align: center;
+  outline-style: groove;
+  outline-color: #276e1daf;
+  outline-width: thin;  */
+}
+.signUpForm input {
+  font-family: sans-serif;
+  font-size: medium;
+  margin: 2px;
+  text-align: center;
+}
+
+
+.loginDiv {
+  grid-area: "b";
+  text-align: center;
+  font-size: large;
+  margin-right: 30%;
+  margin-left: 5%;
+  margin-bottom: 20%;
+}
+.loginDiv input {
+  font-family: sans-serif;
+  font-size: medium;
+  margin: 2px;
+  text-align: center;
+}
+.head {
+  grid-area: "h";
+}
+div.loginDiv{
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+div.signUpForm{
+  margin-left: auto;
+  margin-right: auto;
+}
+.caButton {
+  font-family: FoundersGrotesk, sans-serif;
+  font-size: 19px;
+  color: white;
+  background: #00aeef;
+  text-decoration: none;
+  border-radius: 800px;
+  border: none;
+  margin: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 6px;
+}
+.caButton:hover{
+  font-size: 20px;
+  background-color: #0190c4
+}
+#ca {
+  margin-left: 30%;
+
 .orgCard {
   background-color: #809c4c;
   list-style: none;
   border-style: solid;
   border-radius: 8px;
   margin-bottom: 8px;
+
 }
