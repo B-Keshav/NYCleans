@@ -7,17 +7,12 @@ function JobCard({ job, user }) {
     const [vol, setVolunteers] = useState([])
 
     
+    useEffect(() => {
+        fetch("/volunteers")
+            .then((r) => r.json())
+            .then((data) => setVolunteers(data));
+    }, []);
     // Handles logic for Edit.
-    // useEffect(() => {
-    //     fetch("/volunteers")
-    //       .then((r) => r.json())
-    //       .then((data) => setVolunteers(data));
-    //   }, []);
-    
-    //     console.log(user)
-    //     const organizer = vol.filter((v) => v.is_organizer == true && user.id == vol.user_id)
-    //     console.log(organizer)
-
 
     // need error state that says--you need to be logged in!
     function noUserClick() {
@@ -35,6 +30,9 @@ function JobCard({ job, user }) {
             </div>
         )
     }
+
+    const organizer = vol.filter((v) => v.is_organizer === true && user.id === v.user_id)
+    const isOrg = organizer.map((e) => e.job_id)
 
     function newVolunteer() {
         fetch('/volunteers', {
@@ -71,6 +69,10 @@ function JobCard({ job, user }) {
     }
     const hasJob = user.volunteers.map(j => j.job_id)
 
+    function onEditClick(){
+        history.push(`/edit/${job.id}`)
+    }
+
     return (
         <div className="jobCard">
             <p className="jobTitle">{job.job_name}</p>
@@ -79,7 +81,13 @@ function JobCard({ job, user }) {
             <p className="jobDesc">{job.description}</p>
             <p className="jobLoc">{job.location.address}</p>
             {hasJob.includes(job.id) ?
+                <>
+                {isOrg.includes(job.id)? 
+                <button onClick={onEditClick}>Edit Your Event</button>
+                :
                 <button onClick={() => findVolunteer()}>I can't Attend</button>
+                }
+                </>
                 :
                 <button onClick={() => newVolunteer()}>Volunteer To Clean!</button>
             }

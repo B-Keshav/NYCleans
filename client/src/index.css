@@ -282,3 +282,8 @@ div.content {
   position: relative;
   margin-left: 25%;
 }
+
+.edit_job{
+  position: relative;
+  left: 300px
+}

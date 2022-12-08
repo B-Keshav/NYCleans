@@ -21,6 +21,7 @@ class JobsController < ApplicationController
 
         job = Job.create!(location_id: location.id, description: params[:description], job_name: params[:jobName], image: params[:image])
         # render json: job, status: :created
+        volunteer = Volunteer.create!(user_id: session[:user_id], job_id: job.id, is_organizer: true)
         render json: job, include: :location, status: :created
     end
 

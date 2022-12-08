@@ -32,6 +32,6 @@ class VolunteersController < ApplicationController
     private
 
     def volunteer_params
-    params.permit(:user_id, :job_id, :is_organizer)
+        params.permit(:user_id, :job_id, :is_organizer)
     end
 end

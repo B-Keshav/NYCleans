@@ -4,11 +4,10 @@ import Login from './components/Login'
 import Jobs from './components/Jobs';
 import PostJob from './PostJob';
 import UserProfile from './components/UserProfile';
-
-// import { useState, useEffect } from "react";
+import Organization from './components/Organization';
+import EditJob from './components/EditJob';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import Organization from './components/Organization';
 
 function App() {
 
@@ -73,6 +72,9 @@ function App() {
           </Route>
           <Route path='/organizations'>
             <Organization />
+          </Route>
+          <Route path='/edit/:id'>
+            <EditJob />
           </Route>
           <Route exact path="/">
             <Home user={user} />
