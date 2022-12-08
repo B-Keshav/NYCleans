@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-#    skip_before_action :authorize, only: [:create]
+   # skip_before_action :authorize, only: [:create]
 
    def index
       render json: User.all
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
    end
 
    def create
+
     #Getting the user's address to be one string
     user_address = [params[:address], params[:city], params[:state], params[:zip]].compact.join(', ')
     #Using that string to get location data for user
@@ -19,11 +20,10 @@ class UsersController < ApplicationController
     lat = geocode_results.first.coordinates.first
     lng = geocode_results.first.coordinates.second
 
-
     user = User.create!(username: params[:username], age: params[:age], password: params[:password], bio: params[:bio], organization_id: params[:organization_id], address: params[:address], city: params[:city], state: params[:state], zip: params[:zip], lng: lng, lat: lat, avatar: params[:avatar])
-
+    
     session[:user_id] = user.id
-    render json: user, serializer: UserAndLocationSerializerSerializer, status: :created
+    render json: user, status: :created
    end
 
    def my_jobs

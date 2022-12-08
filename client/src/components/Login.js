@@ -57,7 +57,7 @@ function Login({ onLogin }) {
       }),
     })
       .then((r) => r.json())
-      .then((res) => handleResponse(res));
+      .then((res) => onLogin(res));
     history.push('/profile')
   }
 
@@ -96,6 +96,7 @@ function Login({ onLogin }) {
             />
             <input
               name='age'
+              type="number"
               placeholder='Age'
               onChange={(e) => setAge(e.target.value)}
             />
