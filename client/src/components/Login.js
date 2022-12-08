@@ -16,11 +16,21 @@ function Login({ onLogin }) {
   const [state, setState] = useState("")
   const [zip, setZip] = useState(null)
   const [avatar, setAvatar] = useState("")
+  const [loginError, setLoginError] = useState(false)
+  const [createAccError, setCreateAccError] = useState(false)
+  const errorResponse = <p style={{ color: "red" }}> Incorrect Username or Password </p>
+  const errorResponseCreate = <p style={{ color: "red" }}> Please fill out all fields correctly </p>
+
 
   const [login, setLogin] = useState({
     username: "",
     password: "",
   })
+
+  function handleResponse(res) {
+    alert(res.errors)
+  }
+
 
   const [orgs, setOrgs] = useState([])
 
@@ -29,6 +39,7 @@ function Login({ onLogin }) {
       .then(res => res.json())
       .then(data => setOrgs(data))
   }, [])
+
 
 
   let history = useHistory()
@@ -66,9 +77,24 @@ function Login({ onLogin }) {
         avatar: avatar
       }),
     })
-      .then((r) => r.json())
-      .then((res) => onLogin(res));
-    history.push('/profile')
+      .then((r) => {
+        if (r.status === 201) {
+          r.json()
+          .then((res) => {
+            console.log(res)
+            onLogin(res)
+          });
+          history.push('/profile')
+        }
+        else if (r.status === 422) {
+          setCreateAccError(true)
+          console.log(r.json())
+        }
+        else {
+          setCreateAccError(true)
+          console.log("yikes in the else")
+        }
+      })
   }
 
   function handleLogin(e) {
@@ -83,16 +109,41 @@ function Login({ onLogin }) {
         password: login.password
       })
     })
-      .then(res => res.json())
-      .then(data => onLogin(data))
-    history.push('/profile')
+      .then(res => {
+        if (res.status === 200) {
+          setLoginError(false)
+          res.json()
+          .then(data => onLogin(data))
+          history.push('/profile')
+        }
+        else if (res.status === 401) {
+          setLoginError(true)
+          console.log("yikes")
+          console.log(res.json())
+        }
+        else {
+          setLoginError(true)
+          console.log("yikes")
+        }
+      })
   }
 
   return (
-    <div className="content">
-      <div className="App">
+    <div className="content" id="signUpLogin">
+       {/* <h1 className="head">Create Account or Signin</h1> */}
+      <div className="signUpForm">
+        <h1>Create Account </h1>
         <form onSubmit={handleSubmit}>
+
+          {/* <div className="signDiv">  */}
+
+          {
+            createAccError ?
+              errorResponseCreate :
+              null
+          }
           <div>
+
             <input
               name='username'
               placeholder='Username'
@@ -104,6 +155,7 @@ function Login({ onLogin }) {
               placeholder='Password'
               onChange={(e) => setPassword(e.target.value)}
             />
+            <br />
             <input
               name='age'
               type="number"
@@ -115,15 +167,11 @@ function Login({ onLogin }) {
               placeholder='Tell us about you!'
               onChange={(e) => setBio(e.target.value)}
             />
-            {/* <input
-              name='org'
-              placeholder='Organization'
-              onChange={(e) => setOrg(e.target.value)}
-            /> */}
-            <select onChange={(e) => setOrg(e.target.value)}>
+
+            {/* <select onChange={(e) => setOrg(e.target.value)}>
               <option value="">Choose An Organization to Work With</option>
               {renderOrgs}
-            </select>
+            </select> */}
             <input
               type="text"
               placeholder="Street Address"
@@ -148,31 +196,43 @@ function Login({ onLogin }) {
               name="zip"
               onChange={(e) => setZip(e.target.value)}
             />
+          <br />
+          <select onChange={(e) => setOrg(e.target.value)}>
+              <option className="orgList" value="">Choose An Organization to Work With</option>
+              {renderOrgs}
+            </select>  
+
             <AvatarContainer setAvatar={setAvatar} avatar={avatar} />
           </div>
           <br />
           <br />
-          <button type="submit">Create Account</button>
+          <button type="submit" className="caButton" id="ca">Create Account</button>
         </form>
         <br />
-        <h4>Have an account? Login!</h4>
       </div>
-      <div> <form onSubmit={handleLogin}>
-        <div>
-          <input
-            name='username'
-            placeholder='Name'
-            onChange={handleChange}
-          />
-          <input
-            name='password'
-            type="password"
-            placeholder='Password'
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Sign In</button>
-      </form>
+      <div className="loginDiv">
+      <h1>Have an account? Login!</h1>
+        {
+          loginError ?
+            errorResponse :
+            null
+        }
+        <form onSubmit={handleLogin}>
+          <div>
+            <input
+              name='username'
+              placeholder='Name'
+              onChange={handleChange}
+            />
+            <input
+              name='password'
+              type="password"
+              placeholder='Password'
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit" className="caButton">Sign In</button>
+        </form>
       </div>
     </div>
   );

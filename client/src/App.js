@@ -40,7 +40,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className='top-banner-text'><span className='top-banner'></span></div>
-      <div className='logo_bar'>NYClean</div>
+      <div className='logo_bar'>
+        <h1 className='logo-text'>NYClean</h1>
+      <img className="logo" src="https://static.wixstatic.com/media/3b6ec1_3eb03c3c64a5480bb6cbb21cdec934c6~mv2.png/v1/fill/w_134,h_134,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/green-product-png-3.png"></img>
+      </div>
+      
       <div className="App">
         <div className="sidebar">
           <Link to={"/"} className="active">Home</Link>
