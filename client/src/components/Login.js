@@ -129,15 +129,21 @@ function Login({ onLogin }) {
   }
 
   return (
-    <div className="content">
-      <div className="App">
+    <div className="content" id="signUpLogin">
+       {/* <h1 className="head">Create Account or Signin</h1> */}
+      <div className="signUpForm">
+        <h1>Create Account </h1>
         <form onSubmit={handleSubmit}>
+
+          {/* <div className="signDiv">  */}
+
           {
             createAccError ?
               errorResponseCreate :
               null
           }
           <div>
+
             <input
               name='username'
               placeholder='Username'
@@ -149,6 +155,7 @@ function Login({ onLogin }) {
               placeholder='Password'
               onChange={(e) => setPassword(e.target.value)}
             />
+            <br />
             <input
               name='age'
               type="number"
@@ -160,11 +167,9 @@ function Login({ onLogin }) {
               placeholder='Tell us about you!'
               onChange={(e) => setBio(e.target.value)}
             />
-            {/* <input
-              name='org'
-              placeholder='Organization'
-              onChange={(e) => setOrg(e.target.value)}
-            /> */}
+
+            {/* <br /> */}
+
             <select onChange={(e) => setOrg(e.target.value)}>
               <option value="">Choose An Organization to Work With</option>
               {renderOrgs}
@@ -197,12 +202,12 @@ function Login({ onLogin }) {
           </div>
           <br />
           <br />
-          <button type="submit">Create Account</button>
+          <button type="submit" className="caButton" id="ca">Create Account</button>
         </form>
         <br />
-        <h4>Have an account? Login!</h4>
       </div>
-      <div>
+      <h1>Have an account? Login!</h1>
+      <div className="loginDiv">
         {
           loginError ?
             errorResponse :
@@ -222,7 +227,7 @@ function Login({ onLogin }) {
               onChange={handleChange}
             />
           </div>
-          <button type="submit">Sign In</button>
+          <button type="submit" className="caButton">Sign In</button>
         </form>
       </div>
     </div>
