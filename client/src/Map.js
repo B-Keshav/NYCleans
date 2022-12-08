@@ -50,10 +50,10 @@ function Map({ user }) {
 
     return (
         <div className="content">
-        <div className="map">
-            <h2 className="map-h2">Volunteer Opportunities near you!</h2>
-            <div className="google-map">
-                <GoogleMapReact
+            <div className="flex">
+                <h2 className="text">Volunteer Opportunities near you!</h2>
+                <div className="google-map">
+                    <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
                     center={{
                         lat: 40.70541807766208,
@@ -61,12 +61,13 @@ function Map({ user }) {
                     }}
                     defaultZoom={17}
                     defaultOptions={{ fullscreenControl: false, zoomControl: false }}
-                >
+                     >
                     {jobLocationArray}
-                </GoogleMapReact>
+                 </GoogleMapReact>
+                </div>
             </div>
         </div>
-        </div>
+    
     )
 }
 

@@ -467,6 +467,20 @@ select {
   border-radius: 8px;
   margin-bottom: 8px;
 }
+
+.flex {
+  display: flex;
+  gap: 10px;
+  gap: 10px 20px; /* row-gap column gap */
+  row-gap: 10px;
+  column-gap: 20px;
+  justify-content: space-around;
+}
+
+.text {
+  max-width: 480px;
+  }
+
 /* just for testing */
 .edit_job{
   position: relative;
