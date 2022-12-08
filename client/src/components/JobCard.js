@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-function JobCard({ job, user }) {
+function JobCard({ job, user, initialIsSignedUp}) {
     let history = useHistory()
 
     const [vol, setVolunteers] = useState([])
+    const [isSignedUp, setIsSignedUp] = useState(initialIsSignedUp)
 
     
+    // function toggleButton () {
+    //     setButton(!button)
+    // }
+
+
     // Handles logic for Edit.
     // useEffect(() => {
     //     fetch("/volunteers")
@@ -37,6 +43,7 @@ function JobCard({ job, user }) {
     }
 
     function newVolunteer() {
+        setIsSignedUp(!isSignedUp)
         fetch('/volunteers', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -55,14 +62,16 @@ function JobCard({ job, user }) {
                 }
             })
             .then(data => console.log(data))
+            
     }
 
     function findVolunteer() {
+        setIsSignedUp(!isSignedUp)
         fetch(`/findvolunteer/${job.id}`, {
             method: "DELETE"
         }).then(r => {
             if (r.ok) {
-                
+                // toggleButton()
                 console.log(r)
                 console.log(user.volunteers)
             }
@@ -70,7 +79,7 @@ function JobCard({ job, user }) {
 
     }
     
-    const hasJob = user.volunteers.map(j => j.job_id)
+    // const hasJob = user.volunteers.map(j => j.job_id)
 
     return (
         <div className="jobCard">
@@ -79,7 +88,7 @@ function JobCard({ job, user }) {
             <p className="jobTitle">{job.name}</p>
             <p className="jobDesc">{job.description}</p>
             <p className="jobLoc">📍{job.location.address}</p>
-            {hasJob.includes(job.id) ?
+            {isSignedUp ?
                 <button onClick={() => findVolunteer()} className='jobButton'>Sorry, I Can't Make It</button>
                 :
                 <button onClick={() => newVolunteer()} className='jobButton'>Volunteer To Clean!</button>
