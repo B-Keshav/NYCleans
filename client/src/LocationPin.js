@@ -16,7 +16,7 @@ function LocationPin({ text, id }) {
 
   const jobArray = locationJob.map(job => {
     return (
-      <MapJobCard job={job} key={job.job_name}/>
+      <MapJobCard job={job} key={job.job_name} />
     )
   })
 
