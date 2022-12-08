@@ -1,18 +1,26 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-function JobCard({ job, user }) {
+function JobCard({ job, user, initialIsSignedUp}) {
     let history = useHistory()
 
-    // const [jobIncludes, setJobIncludes] = useState([])
     const [vol, setVolunteers] = useState([])
+    const [isSignedUp, setIsSignedUp] = useState(initialIsSignedUp)
 
     
+ madeline
+    // function toggleButton () {
+    //     setButton(!button)
+    // }
+
+
+
     useEffect(() => {
         fetch("/volunteers")
             .then((r) => r.json())
             .then((data) => setVolunteers(data));
     }, []);
+ main
     // Handles logic for Edit.
 
     // need error state that says--you need to be logged in!
@@ -36,6 +44,7 @@ function JobCard({ job, user }) {
     const isOrg = organizer.map((e) => e.job_id)
 
     function newVolunteer() {
+        setIsSignedUp(!isSignedUp)
         fetch('/volunteers', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -54,14 +63,16 @@ function JobCard({ job, user }) {
                 }
             })
             .then(data => console.log(data))
+            
     }
 
     function findVolunteer() {
+        setIsSignedUp(!isSignedUp)
         fetch(`/findvolunteer/${job.id}`, {
             method: "DELETE"
         }).then(r => {
             if (r.ok) {
-                
+                // toggleButton()
                 console.log(r)
                 console.log(user.volunteers)
             }
@@ -69,7 +80,7 @@ function JobCard({ job, user }) {
 
     }
     
-    const hasJob = user.volunteers.map(j => j.job_id)
+    // const hasJob = user.volunteers.map(j => j.job_id)
 
     function onEditClick(){
         history.push(`/edit/${job.id}`)
@@ -82,11 +93,9 @@ function JobCard({ job, user }) {
             <p className="jobTitle">{job.name}</p>
             <p className="jobDesc">{job.description}</p>
             <p className="jobLoc">📍{job.location.address}</p>
-            {hasJob.includes(job.id) ?
-                <>
-                {isOrg.includes(job.id)? 
-                <button onClick={onEditClick} className='jobButton'>Edit Your Event</button>
-                :
+
+            {isSignedUp ?
+
                 <button onClick={() => findVolunteer()} className='jobButton'>Sorry, I Can't Make It</button>
                 }
                 </>
