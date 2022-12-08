@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom"
 import AvatarContainer from "./AvatarComponents/AvatarContainer"
 // import UserProfile from "./UserProfile";
@@ -26,11 +26,29 @@ function Login({ onLogin }) {
     username: "",
     password: "",
   })
+
   function handleResponse(res) {
     alert(res.errors)
   }
 
+
+  const [orgs, setOrgs] = useState([])
+
+  useEffect(() => {
+    fetch('/organizations')
+      .then(res => res.json())
+      .then(data => setOrgs(data))
+  }, [])
+
+
+
   let history = useHistory()
+
+  if (!orgs) return <h1>Loading...</h1>
+
+  const renderOrgs = orgs.map(org => {
+    return <option key={org.name} value={org.id}>{org.name}</option>
+  })
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -38,7 +56,6 @@ function Login({ onLogin }) {
       ...login, [name]: value
     })
   }
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -143,11 +160,15 @@ function Login({ onLogin }) {
               placeholder='Tell us about you!'
               onChange={(e) => setBio(e.target.value)}
             />
-            <input
+            {/* <input
               name='org'
               placeholder='Organization'
               onChange={(e) => setOrg(e.target.value)}
-            />
+            /> */}
+            <select onChange={(e) => setOrg(e.target.value)}>
+              <option value="">Choose An Organization to Work With</option>
+              {renderOrgs}
+            </select>
             <input
               type="text"
               placeholder="Street Address"

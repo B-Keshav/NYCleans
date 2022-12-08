@@ -6,18 +6,19 @@ function UserProfile({ currentUser }) {
 
     const renderJobs = currentUser.jobs.map((job) => {
         return (
-         <>
-            <li key={`${currentUser.username} ${job.job_name}`}className="profileJobs">
+         <div key={job.id}>
+            <li className="profileJobs">
                 <h2>{job.job_name}</h2>
                 <img src={job.image} alt={job.job_name}/>
                 <p>{job.description}</p>
             </li>
             <br></br>
-            </>
+            </div>
         )
     })
 
     return (
+        <div className="content">
         <div className="profile">
             <h1>Welcome {username}</h1>
             <div>
@@ -33,6 +34,7 @@ function UserProfile({ currentUser }) {
                 <h1>Current Jobs</h1>
                 <ul>{renderJobs}</ul>
             </div>
+        </div>
         </div>
     )
 }
