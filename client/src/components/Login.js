@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom"
 import AvatarContainer from "./AvatarComponents/AvatarContainer"
 // import UserProfile from "./UserProfile";
@@ -16,6 +16,11 @@ function Login({ onLogin }) {
   const [state, setState] = useState("")
   const [zip, setZip] = useState(null)
   const [avatar, setAvatar] = useState("")
+  const [loginError, setLoginError] = useState(false)
+  const [createAccError, setCreateAccError] = useState(false)
+  const errorResponse = <p style={{ color: "red" }}> Incorrect Username or Password </p>
+  const errorResponseCreate = <p style={{ color: "red" }}> Please fill out all fields correctly </p>
+
 
   const [login, setLogin] = useState({
     username: "",
@@ -26,7 +31,24 @@ function Login({ onLogin }) {
     alert(res.errors)
   }
 
+
+  const [orgs, setOrgs] = useState([])
+
+  useEffect(() => {
+    fetch('/organizations')
+      .then(res => res.json())
+      .then(data => setOrgs(data))
+  }, [])
+
+
+
   let history = useHistory()
+
+  if (!orgs) return <h1>Loading...</h1>
+
+  const renderOrgs = orgs.map(org => {
+    return <option key={org.name} value={org.id}>{org.name}</option>
+  })
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -34,7 +56,6 @@ function Login({ onLogin }) {
       ...login, [name]: value
     })
   }
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -56,9 +77,24 @@ function Login({ onLogin }) {
         avatar: avatar
       }),
     })
-      .then((r) => r.json())
-      .then((res) => onLogin(res));
-    history.push('/profile')
+      .then((r) => {
+        if (r.status === 201) {
+          r.json()
+          history.push('/profile')
+        }
+        else if (r.status === 422) {
+          setCreateAccError(true)
+          console.log(r.json())
+        }
+        else {
+          setCreateAccError(true)
+          console.log("yikes in the else")
+        }
+      })
+      .then((res) => {
+        console.log(res)
+        onLogin(res)
+      });
   }
 
   function handleLogin(e) {
@@ -73,9 +109,23 @@ function Login({ onLogin }) {
         password: login.password
       })
     })
-      .then(res => res.json())
-      .then(data => onLogin(data))
-    history.push('/profile')
+      .then(res => {
+        if (res.status === 200) {
+          setLoginError(false)
+          res.json()
+          .then(data => onLogin(data))
+          history.push('/profile')
+        }
+        else if (res.status === 401) {
+          setLoginError(true)
+          console.log("yikes")
+          console.log(res.json())
+        }
+        else {
+          setLoginError(true)
+          console.log("yikes")
+        }
+      })
   }
 
   return (
@@ -84,7 +134,16 @@ function Login({ onLogin }) {
       <div className="signUpForm">
         <h1>Create Account </h1>
         <form onSubmit={handleSubmit}>
+
           <div className="signDiv"> 
+
+          {
+            createAccError ?
+              errorResponseCreate :
+              null
+          }
+          <div>
+
             <input
               name='username'
               placeholder='Username'
@@ -108,12 +167,20 @@ function Login({ onLogin }) {
               placeholder='Tell us about you!'
               onChange={(e) => setBio(e.target.value)}
             />
+
             <br />
             <input
+
+            {/* <input
+
               name='org'
               placeholder='Organization'
               onChange={(e) => setOrg(e.target.value)}
-            />
+            /> */}
+            <select onChange={(e) => setOrg(e.target.value)}>
+              <option value="">Choose An Organization to Work With</option>
+              {renderOrgs}
+            </select>
             <input
               type="text"
               placeholder="Street Address"
@@ -146,6 +213,7 @@ function Login({ onLogin }) {
         </form>
         <br />
       </div>
+
       <div className="loginDiv"> <form onSubmit={handleLogin}>
       <h1>Have an account? Login!</h1>
         <div>
@@ -163,6 +231,30 @@ function Login({ onLogin }) {
         </div>
         <button type="submit" className="caButton">Sign In</button>
       </form>
+
+      <div>
+        {
+          loginError ?
+            errorResponse :
+            null
+        }
+        <form onSubmit={handleLogin}>
+          <div>
+            <input
+              name='username'
+              placeholder='Name'
+              onChange={handleChange}
+            />
+            <input
+              name='password'
+              type="password"
+              placeholder='Password'
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit">Sign In</button>
+        </form>
+
       </div>
     </div>
   );

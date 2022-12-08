@@ -15,6 +15,19 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+
+input {
+  padding: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1.2em;
+  border-bottom: 2px solid rgb(16, 67, 13);
+  transition: all 0.2s;
+  width: 100%;
+}
+
+
 #search {
 padding: 0.25rem;
 border: none;
@@ -55,15 +68,34 @@ text-align: center;
 }
 
 
+/* .content {
+  display: block;
+  margin: auto;
+}
+.content form {
+display: inline-block;
+justify-content: center;
+padding: 0.25rem;
+border: none;
+font-family: inherit;
+font-size: 1.2em;
+border-bottom: 2px solid rgb(16, 67, 13);
+transition: all 0.2s;
+width: 50%;
+text-align: center;
+} */
+
+
 .jobContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 
-    "header header header" 
+  grid-template-areas:
+    "header header header"
     "job job job"
     "job job job";
 
 }
+
 .jobCard {
   display: block;
   justify-content: center;
@@ -88,6 +120,7 @@ font-weight: 500;
 .jobCard h2{
   color: #162807;
 }
+
 .jobImage {
   position: relative;
   max-width: 70%;
@@ -122,14 +155,19 @@ font-weight: 500;
   font-size: 15px;
   line-height: 30px;
   text-align: center;
-  background-color: #589E1D;
-  color: #ffffff;
+
+  background-color: #809c4c;
+  color: black;
+  font-weight:bold;
+
 }
+
 .top-banner::before {
   content: "NYClean is here!";
   animation: animate infinite 7s;
   padding-left: 10px;
 }
+
 @keyframes animate {
 
   0% {
@@ -186,7 +224,8 @@ font-weight: 500;
 }
 .avatarIcon {
   width: 60px;
-  
+  border-style: solid;
+  border-radius: 8px;
 }
 
 .avatarCard {
@@ -194,24 +233,27 @@ font-weight: 500;
   align-self: flex-end;
   align-items: center; 
   margin: 10px;
-  border-style: solid;
   width: 60px;
 
 }
 
 .avatarSelected {
-  position: relative; right: 60px; top: 48px;
+  position: relative;
+  right: 60px;
+  top: 48px;
 }
 
 /* PROFILE STYLING */
 .profile {
   display: inline-block;
   text-align: left;
+  position: center;
 }
 
 .profilePicture {
   width: 120px;
   border-style: solid;
+  border-radius: 8px;
 }
 
 .profileJobs {
@@ -270,8 +312,14 @@ div.content {
     height: auto;
     position: relative;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+
+  .sidebar a {
+    float: left;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
@@ -283,13 +331,14 @@ div.content {
 
 }
 
-.orgs_page_box{
+.orgs_page_box {
   text-align: left;
   width: 500px;
   border: 1px solid white;
   position: relative;
   margin-left: 25%;
 }
+
 
 #signUpLogin {
   display: grid;
@@ -372,4 +421,12 @@ div.signUpForm{
 }
 #ca {
   margin-left: 30%;
+
+.orgCard {
+  background-color: #809c4c;
+  list-style: none;
+  border-style: solid;
+  border-radius: 8px;
+  margin-bottom: 8px;
+
 }

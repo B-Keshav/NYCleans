@@ -3,7 +3,22 @@ import { useHistory } from "react-router-dom";
 
 function JobCard({ job, user }) {
     let history = useHistory()
+
+    // const [jobIncludes, setJobIncludes] = useState([])
+    const [vol, setVolunteers] = useState([])
+
     
+    // Handles logic for Edit.
+    // useEffect(() => {
+    //     fetch("/volunteers")
+    //       .then((r) => r.json())
+    //       .then((data) => setVolunteers(data));
+    //   }, []);
+    
+    //     console.log(user)
+    //     const organizer = vol.filter((v) => v.is_organizer == true && user.id == v.user_id)
+    //     console.log(organizer)
+
 
     // need error state that says--you need to be logged in!
     function noUserClick() {
