@@ -138,20 +138,25 @@ text-align: center;
   font-family: arial, sans-serif;
 }
 
+.logo {
+  max-width: 70px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.logo-text {
+  float: left;
+  color: #6fa249;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 40px;
+}
 /* Google Map */
 .google-map {
   max-width: 600px;
   max-height: 550px;
   padding: 20px;
 }
-
-/* Volunteers */
-.volunteers {
-  max-width: 800px;
-  max-height: 400px;
-}
-
-
 /* Avatar selection icons */
 .avatarIcon {
   width: 60px;
@@ -255,4 +260,32 @@ div.content {
   border: 1px solid white;
   position: relative;
   margin-left: 25%;
+}
+
+.welcome {
+  float: left
+}
+
+/* Volunteers */
+
+/* #homecontent{
+
+} */
+.vol-container {
+  max-width: 900px;
+  max-height: 500px;
+  margin: 100px;
+ }
+
+.volunteers {
+  max-width: 600px;
+  max-height: 500px;
+  float: left;
+}
+
+
+.about-text{
+  max-width: 260px;
+  padding-left: 10px;
+  float: right;
 }
