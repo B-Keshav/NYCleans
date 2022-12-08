@@ -479,4 +479,10 @@ select {
 
 .text {
   max-width: 480px;
+  }
+
+/* just for testing */
+.edit_job{
+  position: relative;
+  left: 300px;
 }
