@@ -18,24 +18,27 @@ code {
   display: flex;
   flex-direction: column;
 }
+
 input {
-padding: 0.25rem;
-border: none;
-font-family: inherit;
-font-size: 1.2em;
-border-bottom: 2px solid rgb(16, 67, 13);
-transition: all 0.2s;
-width: 100%;
+  padding: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1.2em;
+  border-bottom: 2px solid rgb(16, 67, 13);
+  transition: all 0.2s;
+  width: 100%;
 }
+
 .jobContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 
-    "header header header" 
+  grid-template-areas:
+    "header header header"
     "job job job"
     "job job job";
 
 }
+
 .jobCard {
   display: block;
   justify-content: center;
@@ -48,6 +51,7 @@ width: 100%;
   outline-color: #cfc4c4;
   outline-width: thin;
 }
+
 .jobImage {
   position: relative;
   max-width: 70%;
@@ -65,11 +69,13 @@ width: 100%;
   background-color: #809c4c;
   color: #ffffff;
 }
+
 .top-banner::before {
   content: "NYClean is here!";
   animation: animate infinite 7s;
   padding-left: 10px;
 }
+
 @keyframes animate {
 
   0% {
@@ -110,7 +116,7 @@ width: 100%;
 /* Avatar selection icons */
 .avatarIcon {
   width: 60px;
-  
+
 }
 
 .avatarCard {
@@ -121,7 +127,9 @@ width: 100%;
 }
 
 .avatarSelected {
-  position: relative; right: 60px; top: 48px;
+  position: relative;
+  right: 60px;
+  top: 48px;
 }
 
 /* PROFILE STYLING */
@@ -191,8 +199,14 @@ div.content {
     height: auto;
     position: relative;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+
+  .sidebar a {
+    float: left;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
@@ -204,7 +218,7 @@ div.content {
 
 }
 
-.orgs_page_box{
+.orgs_page_box {
   text-align: left;
   width: 500px;
   border: 1px solid white;
