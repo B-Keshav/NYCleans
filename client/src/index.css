@@ -195,20 +195,25 @@ font-weight: 500;
   font-weight: 700;
 }
 
+.logo {
+  max-width: 70px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.logo-text {
+  float: left;
+  color: #6fa249;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 40px;
+}
 /* Google Map */
 .google-map {
   max-width: 600px;
   max-height: 550px;
   padding: 20px;
 }
-
-/* Volunteers */
-.volunteers {
-  max-width: 800px;
-  max-height: 400px;
-}
-
-
 /* Avatar selection icons */
 .avatarDiv {
   margin-top: 9px;
@@ -339,6 +344,33 @@ div.content {
 }
 
 
+.welcome {
+  float: left
+}
+
+/* Volunteers */
+
+/* #homecontent{
+
+} */
+.vol-container {
+  max-width: 900px;
+  max-height: 500px;
+  margin: 100px;
+ }
+
+.volunteers {
+  max-width: 600px;
+  max-height: 500px;
+  float: left;
+}
+
+
+.about-text{
+  max-width: 260px;
+  padding-left: 10px;
+  float: right;
+
 #signUpLogin {
   display: grid;
   grid-template-areas: 
@@ -432,5 +464,4 @@ select {
   border-style: solid;
   border-radius: 8px;
   margin-bottom: 8px;
-
 }
