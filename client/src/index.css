@@ -467,3 +467,8 @@ select {
   border-radius: 8px;
   margin-bottom: 8px;
 }
+/* just for testing */
+.edit_job{
+  position: relative;
+  left: 300px;
+}

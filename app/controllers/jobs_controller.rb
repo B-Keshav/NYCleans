@@ -21,13 +21,23 @@ class JobsController < ApplicationController
 
         job = Job.create!(location_id: location.id, description: params[:description], job_name: params[:jobName], image: params[:image])
         # render json: job, status: :created
+        volunteer = Volunteer.create!(user_id: session[:user_id], job_id: job.id, is_organizer: true)
         render json: job, include: :location, status: :created
     end
 
     def update
+        job_info = [params[:address], params[:city], params[:state], params[:zip], params[:description], params[:jobName]]
+        
+        job_address = [params[:address], params[:city], params[:state], params[:zip]].compact.join(', ')
+        geocode_results = Geocoder.search(job_address)
+        
         job = Job.find(params[:id])
-        job.update(job_params)
-        render json: job, status: :ok
+        
+        location = Location.find(job.location.id)
+        location.update!(address: job_address, lat: geocode_results.first.coordinates.first, lng: geocode_results.first.coordinates.second)
+        job.update!(location_id: location.id, description: params[:description], job_name: params[:jobName], image: params[:image])
+         
+        render json: job, include: :location, status: :accepted
     end
 
     def destroy 

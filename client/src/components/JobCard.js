@@ -8,22 +8,20 @@ function JobCard({ job, user, initialIsSignedUp}) {
     const [isSignedUp, setIsSignedUp] = useState(initialIsSignedUp)
 
     
+ madeline
     // function toggleButton () {
     //     setButton(!button)
     // }
 
 
-    // Handles logic for Edit.
-    // useEffect(() => {
-    //     fetch("/volunteers")
-    //       .then((r) => r.json())
-    //       .then((data) => setVolunteers(data));
-    //   }, []);
-    
-    //     console.log(user)
-    //     const organizer = vol.filter((v) => v.is_organizer == true && user.id == v.user_id)
-    //     console.log(organizer)
 
+    useEffect(() => {
+        fetch("/volunteers")
+            .then((r) => r.json())
+            .then((data) => setVolunteers(data));
+    }, []);
+ main
+    // Handles logic for Edit.
 
     // need error state that says--you need to be logged in!
     function noUserClick() {
@@ -41,6 +39,9 @@ function JobCard({ job, user, initialIsSignedUp}) {
             </div>
         )
     }
+
+    const organizer = vol.filter((v) => v.is_organizer === true && user.id === v.user_id)
+    const isOrg = organizer.map((e) => e.job_id)
 
     function newVolunteer() {
         setIsSignedUp(!isSignedUp)
@@ -81,6 +82,10 @@ function JobCard({ job, user, initialIsSignedUp}) {
     
     // const hasJob = user.volunteers.map(j => j.job_id)
 
+    function onEditClick(){
+        history.push(`/edit/${job.id}`)
+    }
+
     return (
         <div className="jobCard">
             <h2 className="jobTitle">{job.job_name}</h2>
@@ -88,8 +93,12 @@ function JobCard({ job, user, initialIsSignedUp}) {
             <p className="jobTitle">{job.name}</p>
             <p className="jobDesc">{job.description}</p>
             <p className="jobLoc">📍{job.location.address}</p>
+
             {isSignedUp ?
+
                 <button onClick={() => findVolunteer()} className='jobButton'>Sorry, I Can't Make It</button>
+                }
+                </>
                 :
                 <button onClick={() => newVolunteer()} className='jobButton'>Volunteer To Clean!</button>
             }
