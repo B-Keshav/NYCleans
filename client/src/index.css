@@ -193,11 +193,13 @@ text-align: center;
 .profile {
   display: inline-block;
   text-align: left;
+  position: center;
 }
 
 .profilePicture {
   width: 120px;
   border-style: solid;
+  border-radius: 8px;
 }
 
 .profileJobs {

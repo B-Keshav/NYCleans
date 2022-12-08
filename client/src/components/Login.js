@@ -16,12 +16,16 @@ function Login({ onLogin }) {
   const [state, setState] = useState("")
   const [zip, setZip] = useState(null)
   const [avatar, setAvatar] = useState("")
+  const [loginError, setLoginError] = useState(false)
+  const [createAccError, setCreateAccError] = useState(false)
+  const errorResponse = <p style={{ color: "red" }}> Incorrect Username or Password </p>
+  const errorResponseCreate = <p style={{ color: "red" }}> Please fill out all fields correctly </p>
+
 
   const [login, setLogin] = useState({
     username: "",
     password: "",
   })
-
   function handleResponse(res) {
     alert(res.errors)
   }
@@ -56,9 +60,24 @@ function Login({ onLogin }) {
         avatar: avatar
       }),
     })
-      .then((r) => r.json())
-      .then((res) => onLogin(res));
-    history.push('/profile')
+      .then((r) => {
+        if (r.status === 201) {
+          r.json()
+          history.push('/profile')
+        }
+        else if (r.status === 422) {
+          setCreateAccError(true)
+          console.log(r.json())
+        }
+        else {
+          setCreateAccError(true)
+          console.log("yikes in the else")
+        }
+      })
+      .then((res) => {
+        console.log(res)
+        onLogin(res)
+      });
   }
 
   function handleLogin(e) {
@@ -73,15 +92,34 @@ function Login({ onLogin }) {
         password: login.password
       })
     })
-      .then(res => res.json())
-      .then(data => onLogin(data))
-    history.push('/profile')
+      .then(res => {
+        if (res.status === 200) {
+          setLoginError(false)
+          res.json()
+          .then(data => onLogin(data))
+          history.push('/profile')
+        }
+        else if (res.status === 401) {
+          setLoginError(true)
+          console.log("yikes")
+          console.log(res.json())
+        }
+        else {
+          setLoginError(true)
+          console.log("yikes")
+        }
+      })
   }
 
   return (
     <div className="content">
       <div className="App">
         <form onSubmit={handleSubmit}>
+          {
+            createAccError ?
+              errorResponseCreate :
+              null
+          }
           <div>
             <input
               name='username'
@@ -143,22 +181,28 @@ function Login({ onLogin }) {
         <br />
         <h4>Have an account? Login!</h4>
       </div>
-      <div> <form onSubmit={handleLogin}>
-        <div>
-          <input
-            name='username'
-            placeholder='Name'
-            onChange={handleChange}
-          />
-          <input
-            name='password'
-            type="password"
-            placeholder='Password'
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Sign In</button>
-      </form>
+      <div>
+        {
+          loginError ?
+            errorResponse :
+            null
+        }
+        <form onSubmit={handleLogin}>
+          <div>
+            <input
+              name='username'
+              placeholder='Name'
+              onChange={handleChange}
+            />
+            <input
+              name='password'
+              type="password"
+              placeholder='Password'
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit">Sign In</button>
+        </form>
       </div>
     </div>
   );
