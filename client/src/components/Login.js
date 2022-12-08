@@ -135,7 +135,7 @@ function Login({ onLogin }) {
         <h1>Create Account </h1>
         <form onSubmit={handleSubmit}>
 
-          <div className="signDiv"> 
+          {/* <div className="signDiv">  */}
 
           {
             createAccError ?
@@ -168,15 +168,8 @@ function Login({ onLogin }) {
               onChange={(e) => setBio(e.target.value)}
             />
 
-            <br />
-            <input
+            {/* <br /> */}
 
-            {/* <input
-
-              name='org'
-              placeholder='Organization'
-              onChange={(e) => setOrg(e.target.value)}
-            /> */}
             <select onChange={(e) => setOrg(e.target.value)}>
               <option value="">Choose An Organization to Work With</option>
               {renderOrgs}
@@ -213,26 +206,8 @@ function Login({ onLogin }) {
         </form>
         <br />
       </div>
-
-      <div className="loginDiv"> <form onSubmit={handleLogin}>
       <h1>Have an account? Login!</h1>
-        <div>
-          <input
-            name='username'
-            placeholder='Name'
-            onChange={handleChange}
-          />
-          <input
-            name='password'
-            type="password"
-            placeholder='Password'
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit" className="caButton">Sign In</button>
-      </form>
-
-      <div>
+      <div className="loginDiv">
         {
           loginError ?
             errorResponse :
@@ -252,9 +227,8 @@ function Login({ onLogin }) {
               onChange={handleChange}
             />
           </div>
-          <button type="submit">Sign In</button>
+          <button type="submit" className="caButton">Sign In</button>
         </form>
-
       </div>
     </div>
   );
