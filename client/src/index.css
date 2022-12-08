@@ -210,17 +210,13 @@ font-weight: 500;
 
 
 /* Avatar selection icons */
-/* .avatarDiv {
+.avatarDiv {
   margin-top: 9px;
   margin-left: 6.5%;
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: stretch;
-} */
+}
 .avatarDiv h5{
   font-size: large;
+  margin:auto;
 }
 .avatarIcon {
   width: 60px;
@@ -230,9 +226,7 @@ font-weight: 500;
 
 .avatarCard {
   display: inline-flex;
-  align-self: flex-end;
-  align-items: center; 
-  margin: 10px;
+  margin: 5px;
   width: 60px;
 
 }
@@ -402,6 +396,9 @@ div.signUpForm{
   margin-left: auto;
   margin-right: auto;
 }
+select {
+  margin-left: 30%;
+}
 .caButton {
   font-family: FoundersGrotesk, sans-serif;
   font-size: 19px;
@@ -420,8 +417,9 @@ div.signUpForm{
   background-color: #0190c4
 }
 #ca {
-  margin-left: 30%;
+  margin-left: 32%;
 }
+
 
 .orgCard {
   background-color: #809c4c;
