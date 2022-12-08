@@ -11,9 +11,9 @@ function UserProfile({ currentUser }) {
     }, [])
 
     if (!currentUser) {
-    return(
-    <h1>Loading...</h1>
-    )
+        return (
+            <h1>Loading...</h1>
+        )
     }
 
     const { username, age, bio, organization } = currentUser
@@ -28,7 +28,7 @@ function UserProfile({ currentUser }) {
             fetch(`/findvolunteer/${job.id}`, {
                 method: 'DELETE'
             })
-            .then(resp => console.log(resp))
+                .then(resp => console.log(resp))
             e.target.parentNode.remove()
         }
 
@@ -69,7 +69,10 @@ function UserProfile({ currentUser }) {
                 </div>
                 <div>
                     <h1>Current Jobs</h1>
-                    {userJobsElements}
+                    { userJobs.length > 0 ?
+                    userJobsElements :
+                    <h3>No jobs! Volunteer for jobs to see your schedule.</h3>
+                    }
                 </div>
             </div>
         </div>

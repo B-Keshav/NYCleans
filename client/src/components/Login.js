@@ -80,6 +80,10 @@ function Login({ onLogin }) {
       .then((r) => {
         if (r.status === 201) {
           r.json()
+          .then((res) => {
+            console.log(res)
+            onLogin(res)
+          });
           history.push('/profile')
         }
         else if (r.status === 422) {
@@ -91,10 +95,6 @@ function Login({ onLogin }) {
           console.log("yikes in the else")
         }
       })
-      .then((res) => {
-        console.log(res)
-        onLogin(res)
-      });
   }
 
   function handleLogin(e) {
