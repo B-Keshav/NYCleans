@@ -41,7 +41,7 @@ function Map({ user }) {
                 lng={location.lng}
                 text={location.address}
                 id={location.id}
-                key={location.address}
+                key={location.id}
             />
         )
     })
