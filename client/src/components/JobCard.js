@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-function JobCard({ job, user, initialIsSignedUp}) {
+function JobCard({ job, user, initialIsSignedUp }) {
     let history = useHistory()
 
     const [vol, setVolunteers] = useState([])
     const [isSignedUp, setIsSignedUp] = useState(initialIsSignedUp)
 
-    
- madeline
+
+
     // function toggleButton () {
     //     setButton(!button)
     // }
@@ -20,7 +20,7 @@ function JobCard({ job, user, initialIsSignedUp}) {
             .then((r) => r.json())
             .then((data) => setVolunteers(data));
     }, []);
- main
+
     // Handles logic for Edit.
 
     // need error state that says--you need to be logged in!
@@ -63,7 +63,7 @@ function JobCard({ job, user, initialIsSignedUp}) {
                 }
             })
             .then(data => console.log(data))
-            
+
     }
 
     function findVolunteer() {
@@ -79,10 +79,10 @@ function JobCard({ job, user, initialIsSignedUp}) {
         })
 
     }
-    
+
     // const hasJob = user.volunteers.map(j => j.job_id)
 
-    function onEditClick(){
+    function onEditClick() {
         history.push(`/edit/${job.id}`)
     }
 
@@ -95,9 +95,12 @@ function JobCard({ job, user, initialIsSignedUp}) {
             <p className="jobLoc">📍{job.location.address}</p>
 
             {isSignedUp ?
-
-                <button onClick={() => findVolunteer()} className='jobButton'>Sorry, I Can't Make It</button>
-                }
+                <>
+                    {isOrg.includes(job.id) ?
+                        <button onClick={onEditClick} className='jobButton'>Edit Your Event</button>
+                        :
+                        <button onClick={() => findVolunteer()} className='jobButton'>Sorry, I Can't Make It</button>
+                    }
                 </>
                 :
                 <button onClick={() => newVolunteer()} className='jobButton'>Volunteer To Clean!</button>
