@@ -88,7 +88,8 @@ function PostJob() {
                     placeholder="Zip"
                     name="zip"
                 />
-                <button type="submit">Submit Job</button>
+
+                <button type="submit" className="submitJob">Submit Job</button>
             </form>
         </div>
     )
