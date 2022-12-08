@@ -20,7 +20,7 @@ function Jobs ({user}) {
 
     return (
         <div className="content">
-        <JobContainer jobs={filteredJobs} setSearch={setSearch}/>
+        <JobContainer jobs={filteredJobs} setSearch={setSearch} user={user}/>
         </div>
 
     )

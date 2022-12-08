@@ -21,7 +21,7 @@ class JobsController < ApplicationController
 
         job = Job.create!(location_id: location.id, description: params[:description], job_name: params[:jobName], image: params[:image])
         # render json: job, status: :created
-        render json: job, include: :location, status: :ok 
+        render json: job, include: :location, status: :created
     end
 
     def update
