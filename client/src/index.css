@@ -123,7 +123,8 @@ text-align: center;
   line-height: 30px;
   text-align: center;
   background-color: #809c4c;
-  color: #ffffff;
+  color: black;
+  font-weight:bold;
 }
 
 .top-banner::before {
@@ -173,14 +174,15 @@ text-align: center;
 /* Avatar selection icons */
 .avatarIcon {
   width: 60px;
-
+  border-style: solid;
+  border-radius: 8px;
 }
 
 .avatarCard {
   display: inline-flex;
   margin: 10px;
-  border-style: solid;
   width: 60px;
+  height: 65px;
 }
 
 .avatarSelected {
@@ -283,4 +285,12 @@ div.content {
   border: 1px solid white;
   position: relative;
   margin-left: 25%;
+}
+
+.orgCard {
+  background-color: #809c4c;
+  list-style: none;
+  border-style: solid;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
