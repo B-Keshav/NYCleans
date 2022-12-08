@@ -208,10 +208,15 @@ text-align: center;
   background-color: #809c4c;
   width: 400px;
   list-style: none;
+  border-style: solid;
+  border-radius: 8px;
 }
 
 .profileJobs img {
   width: 400px;
+  border-top: solid;
+  border-bottom: solid;
+
 }
 
 

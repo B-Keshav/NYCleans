@@ -5,10 +5,10 @@ class VolunteersController < ApplicationController
         render json: Volunteer.all
     end
 
-    # def show
-    #     volunteer = Volunteer.where(id: session[:user_id], job_id: params[:jobID])
-    #     render json: volunteer, status: :ok
-    # end
+    def show
+        volunteer = Volunteer.find_by(user_id: session[:user_id], job_id: params[:jobID])
+        render json: volunteer.job, status: :ok
+    end
 
 
     def create 
@@ -27,6 +27,15 @@ class VolunteersController < ApplicationController
         volunteer = Volunteer.where(user_id: session[:user_id], job_id: params[:jobID])
         volunteer.delete_all 
         head :no_content
+    end
+
+    def userjobs
+        jobarray = []
+        vols = Volunteer.where(user_id: session[:user_id])
+        vols.each do |vol|
+            jobarray.push(vol.job)
+        end
+        render json: jobarray, status: :ok 
     end
 
     private
