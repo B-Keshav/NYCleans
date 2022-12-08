@@ -18,6 +18,7 @@ function UserProfile({ currentUser }) {
     })
 
     return (
+        <div className="content">
         <div className="profile">
             <h1>Welcome {username}</h1>
             <div>
@@ -33,6 +34,7 @@ function UserProfile({ currentUser }) {
                 <h1>Current Jobs</h1>
                 <ul>{renderJobs}</ul>
             </div>
+        </div>
         </div>
     )
 }
