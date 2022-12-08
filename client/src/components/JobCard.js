@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 function JobCard({ job, user }) {
     let history = useHistory()
+
     // const [jobIncludes, setJobIncludes] = useState([])
     const [vol, setVolunteers] = useState([])
 
@@ -27,11 +28,11 @@ function JobCard({ job, user }) {
     if (!user) {
         return (
             <div className="jobCard">
-                <p className="jobTitle">{job.name}</p>
+                <h2 className="jobTitle">{job.name}</h2>
                 <img className="jobImage" src={job.image} alt="location to be cleaned"></img>
                 <p className="jobDesc">{job.description}</p>
-                <p className="jobLoc">{job.location.address}</p>
-                <button onClick={noUserClick}>Login to Volunteer</button>
+                <p className="jobLoc">📍{job.location.address}</p>
+                <button onClick={noUserClick} className='jobButton'>Login to Volunteer</button>
             </div>
         )
     }
@@ -48,7 +49,6 @@ function JobCard({ job, user }) {
         })
             .then(res => {
                 if (res.status === 201) {
-                    //setUserVol(true)
                     console.log(user.jobs)
                     return res.json();
                 } else {
@@ -63,25 +63,27 @@ function JobCard({ job, user }) {
             method: "DELETE"
         }).then(r => {
             if (r.ok) {
+                
                 console.log(r)
                 console.log(user.volunteers)
             }
         })
 
     }
+    
     const hasJob = user.volunteers.map(j => j.job_id)
 
     return (
         <div className="jobCard">
-            <p className="jobTitle">{job.job_name}</p>
+            <h2 className="jobTitle">{job.job_name}</h2>
             <img className="jobImage" src={job.image} alt="location to be cleaned"></img>
             <p className="jobTitle">{job.name}</p>
             <p className="jobDesc">{job.description}</p>
-            <p className="jobLoc">{job.location.address}</p>
+            <p className="jobLoc">📍{job.location.address}</p>
             {hasJob.includes(job.id) ?
-                <button onClick={() => findVolunteer()}>I can't Attend</button>
+                <button onClick={() => findVolunteer()} className='jobButton'>Sorry, I Can't Make It</button>
                 :
-                <button onClick={() => newVolunteer()}>Volunteer To Clean!</button>
+                <button onClick={() => newVolunteer()} className='jobButton'>Volunteer To Clean!</button>
             }
         </div>
     )

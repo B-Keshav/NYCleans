@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/myjobs', to: "users#my_jobs"
 
+  get '/userjobs', to: "volunteers#userjobs"
+
   delete '/findvolunteer/:jobID', to: "volunteers#findvolunteer"
 
   get '*path',
