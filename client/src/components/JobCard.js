@@ -28,7 +28,7 @@ function JobCard({ job, user }) {
     if (!user) {
         return (
             <div className="jobCard">
-                <h2 className="jobTitle">{job.name}</h2>
+                <h2 className="jobTitle">{job.job_name}</h2>
                 <img className="jobImage" src={job.image} alt="location to be cleaned"></img>
                 <p className="jobDesc">{job.description}</p>
                 <p className="jobLoc">📍{job.location.address}</p>
