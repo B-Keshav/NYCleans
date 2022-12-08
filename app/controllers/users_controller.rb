@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     user = User.create!(username: params[:username], age: params[:age], password: params[:password], bio: params[:bio], organization_id: params[:organization_id], address: params[:address], city: params[:city], state: params[:state], zip: params[:zip], lng: lng, lat: lat, avatar: params[:avatar])
     
     session[:user_id] = user.id
-    render json: user, serializer: UserAndLocationSerializerSerializer, status: :created
+    render json: user, status: :created
    end
 
    def my_jobs

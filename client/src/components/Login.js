@@ -57,7 +57,7 @@ function Login({ onLogin }) {
       }),
     })
       .then((r) => r.json())
-      .then((res) => handleResponse(res));
+      .then((res) => onLogin(res));
     history.push('/profile')
   }
 
