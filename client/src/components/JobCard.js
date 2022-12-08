@@ -7,7 +7,7 @@ function JobCard({ job, user }) {
     const [vol, setVolunteers] = useState([])
 
     
-
+    // Handles logic for Edit.
     // useEffect(() => {
     //     fetch("/volunteers")
     //       .then((r) => r.json())
