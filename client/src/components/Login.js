@@ -168,12 +168,10 @@ function Login({ onLogin }) {
               onChange={(e) => setBio(e.target.value)}
             />
 
-            {/* <br /> */}
-
-            <select onChange={(e) => setOrg(e.target.value)}>
+            {/* <select onChange={(e) => setOrg(e.target.value)}>
               <option value="">Choose An Organization to Work With</option>
               {renderOrgs}
-            </select>
+            </select> */}
             <input
               type="text"
               placeholder="Street Address"
@@ -198,6 +196,12 @@ function Login({ onLogin }) {
               name="zip"
               onChange={(e) => setZip(e.target.value)}
             />
+          <br />
+          <select onChange={(e) => setOrg(e.target.value)}>
+              <option className="orgList" value="">Choose An Organization to Work With</option>
+              {renderOrgs}
+            </select>  
+
             <AvatarContainer setAvatar={setAvatar} avatar={avatar} />
           </div>
           <br />
@@ -206,8 +210,8 @@ function Login({ onLogin }) {
         </form>
         <br />
       </div>
-      <h1>Have an account? Login!</h1>
       <div className="loginDiv">
+      <h1>Have an account? Login!</h1>
         {
           loginError ?
             errorResponse :
