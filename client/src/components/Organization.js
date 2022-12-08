@@ -13,7 +13,6 @@ function Organization(){
     if(!orgs) return <h1>Loading...</h1>
     
     const filterOrgs = orgs.filter(org => org.name !== "None")
-    console.log(filterOrgs)
     
     const renderOrgs = filterOrgs.map((org) => {
         return <OrgCard key={org.id} org={org}/>
