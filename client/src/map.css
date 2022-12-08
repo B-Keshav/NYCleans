@@ -13,9 +13,10 @@
 
 .pin {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   width: 180px;
   color: var(--main-blue);
+  position: relative;
 }
 
 .pin-icon {

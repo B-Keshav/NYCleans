@@ -56,9 +56,9 @@ function UserProfile({ currentUser }) {
 
     return (
         <div className="content">
-            <div className="profile">
+            <div>
+                <div className="profile">
                 <h1>Welcome {username}</h1>
-                <div>
                     <img src={currentUser.avatar} alt="avatar" className={"profilePicture"} />
                     <br />
                     <h4 className="username">{username}</h4>
@@ -68,11 +68,14 @@ function UserProfile({ currentUser }) {
                     <p><strong>Based in:</strong> {organization.city}</p>
                 </div>
                 <div>
+                    
+                    <div className="userJobContainer">
                     <h1>Current Jobs</h1>
                     { userJobs.length > 0 ?
                     userJobsElements :
                     <h3>No jobs! Volunteer for jobs to see your schedule.</h3>
                     }
+                    </div>
                 </div>
             </div>
         </div>

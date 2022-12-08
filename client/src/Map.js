@@ -35,6 +35,7 @@ function Map({ user }) {
     }, []);
 
     const jobLocationArray = jobLocations.map(location => {
+        console.log(location.lat)
         return (
             <LocationPin
                 lat={location.lat}
@@ -57,9 +58,10 @@ function Map({ user }) {
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
                     center={{
                         lat: 40.70541807766208,
-                        lng: -74.01397913050388
+                        lng: -74.01397913050388,
                     }}
                     defaultZoom={17}
+                    gestureHandling={"none"}
                     defaultOptions={{ fullscreenControl: false, zoomControl: false }}
                      >
                     {jobLocationArray}

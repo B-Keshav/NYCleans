@@ -225,6 +225,7 @@ font-weight: 500;
 }
 .avatarIcon {
   width: 60px;
+  
   border-style: solid;
   border-radius: 8px;
 }
@@ -233,7 +234,7 @@ font-weight: 500;
   display: inline-flex;
   margin: 5px;
   width: 60px;
-
+  height: 64px;
 }
 
 .avatarSelected {
@@ -247,6 +248,8 @@ font-weight: 500;
   display: inline-block;
   text-align: left;
   position: center;
+  width: 400px;
+  position: relative;
 }
 
 .profilePicture {
@@ -267,7 +270,12 @@ font-weight: 500;
   width: 400px;
   border-top: solid;
   border-bottom: solid;
+}
 
+.userJobContainer {
+  display: inline-block;
+  width: 400px;
+  position: relative;
 }
 
 
