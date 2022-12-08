@@ -15,7 +15,7 @@ function JobCard({ job, user }) {
     //   }, []);
     
     //     console.log(user)
-    //     const organizer = vol.filter((v) => v.is_organizer == true && user.id == vol.user_id)
+    //     const organizer = vol.filter((v) => v.is_organizer == true && user.id == v.user_id)
     //     console.log(organizer)
 
 
