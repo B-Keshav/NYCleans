@@ -4,8 +4,6 @@ function UserProfile({ currentUser }) {
 
     const { username, age, bio, organization } = currentUser
 
-    console.log(organization)
-
     const renderJobs = currentUser.jobs.map((job) => {
         return (
             <div key={`${currentUser.username} ${job.job_name}`}>

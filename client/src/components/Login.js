@@ -96,6 +96,7 @@ function Login({ onLogin }) {
             />
             <input
               name='age'
+              type="number"
               placeholder='Age'
               onChange={(e) => setAge(e.target.value)}
             />
