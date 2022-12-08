@@ -85,7 +85,7 @@ function JobCard({ job, user }) {
             {hasJob.includes(job.id) ?
                 <>
                 {isOrg.includes(job.id)? 
-                <button onClick={onEditClick}>Edit Your Event</button>
+                <button onClick={onEditClick} className='jobButton'>Edit Your Event</button>
                 :
                 <button onClick={() => findVolunteer()} className='jobButton'>Sorry, I Can't Make It</button>
                 }

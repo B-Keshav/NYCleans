@@ -10,7 +10,7 @@ function EditJob() {
         address: "",
         state: "",
         city: "",
-        zip: null
+        zip: ""
     })
 
     let { id } = useParams()
@@ -35,9 +35,44 @@ function EditJob() {
 
         setEditForm({ ...editForm, [name]: value })
     }
+    console.log(location)
 
     function handleSubmit(e){
         e.preventDefault()
+        const fixAddress = editJob.location.address.split(', ')[0]
+        const name = (editForm.job_name === "") ? editJob.job_name : editForm.job_name  
+        const description = (editForm.description === "") ? editJob.description : editForm.description
+        const image = (editForm.image === "") ? editJob.image : editForm.image
+        const address = (editForm.address === "") ? fixAddress : editForm.address
+        const state = (editForm.state === "") ? editJob.location.state : editForm.state
+        const city = (editForm.city === "") ? editJob.location.city : editForm.city
+        const zip = (editForm.zip === "") ? editJob.location.zip : editForm.zip
+
+        console.log(name, description, image,address,state,city,zip)
+
+        fetch(`/jobs/${editJob.id}`,{
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify({
+                jobName: name,
+                description: description,
+                image: image,
+                address: address,
+                state: state,
+                city: city,
+                zip: parseInt(zip)
+            })
+        })
+        .then(res => {
+            if(res.ok){
+                res.json().then(() => {
+                    console.log("updated")
+                    history.push("/jobs")
+                })
+            }
+        })
     }
 
     return (
@@ -104,7 +139,7 @@ function EditJob() {
                     name="zip"
                     placeholder={location.zip}
                     onChange={handleChange}
-                    value={editForm.description}
+                    value={editForm.zip}
                 />
                 <br />
                 <button>Submit</button>
