@@ -49,11 +49,9 @@ function Map({ user }) {
 
 
 
-    return (
-        <div className="content">
-            <div className="flex">
+    return ( 
+            <div className="google-map">
                 <h2 className="text">Volunteer Opportunities near you!</h2>
-                <div className="google-map">
                     <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
                     center={{
@@ -66,9 +64,8 @@ function Map({ user }) {
                      >
                     {jobLocationArray}
                  </GoogleMapReact>
-                </div>
             </div>
-        </div>
+        
     
     )
 }
