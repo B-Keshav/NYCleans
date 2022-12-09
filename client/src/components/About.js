@@ -19,21 +19,22 @@ function About ({user}) {
                 </div>
                     <section className="pop">
                         {isTrue?
-                             <h1 onClick={isItTrue} classsName="header">Click to Collapse</h1>
+                             <h1 onClick={isItTrue} className="header">Click to Collapse</h1>
                             :
-                            <h1 onClick={isItTrue} classsName="header">Click here to learn more about us!</h1>
+                            <h1 onClick={isItTrue} className="header">Click here to learn more about us!</h1>
                         }
                     </section>
                         {isTrue? 
                         <section  className="firstsection">
-                            <p>Our Mission <br/>Keeping our City Clean!</p>
-                            <p>Core Members <br/> 
+                            <p className="more"><strong>Our Mission</strong> <br/>Sustain thriving Parks & <br/>Public Spaces for New Yorkers</p>
+                            <p className="more"><strong>Core Members</strong> <br/> 
                                 Madeline Dulchin <br/>
                                 Angela Pace<br/>
                                 Keshav Bhati<br/>
                                 Harrison Wilson<br/>
                             </p>
-                            <p>Trees Planted:<br/>955,493</p>
+                            <p className="more"><strong>Trees Planted:</strong><br/>955,493<br/><strong>Parks Cleaned:</strong><br/>106</p>
+
                         </section>
                         :
                         <section  className="firstsection">

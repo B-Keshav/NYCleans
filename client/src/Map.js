@@ -4,7 +4,7 @@ import './map.css'
 import GoogleMapReact from 'google-map-react'
 import loctag from "./images/LocationIcon.png"
 
-function Map({ user }) {
+function Map() {
     const [jobLocations, setJobLocations] = useState([])
 
     // THIS IS CODE THAT WE'LL USE TO DYNAMICALLY SET THE CENTER OF THE MAP
@@ -47,9 +47,8 @@ function Map({ user }) {
         )
     })
 
-
-
     return ( 
+        <div className="content">
             <div className="google-map">
                 <h2 className="text">Volunteer Opportunities near you!</h2>
                     <GoogleMapReact
@@ -63,10 +62,9 @@ function Map({ user }) {
                     defaultOptions={{ fullscreenControl: false, zoomControl: false }}
                      >
                     {jobLocationArray}
-                 </GoogleMapReact>
+                 </GoogleMapReact> 
             </div>
-        
-    
+         </div>
     )
 }
 

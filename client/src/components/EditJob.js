@@ -83,12 +83,13 @@ function EditJob() {
             if(res.ok){
                 history.push('/jobs')
             }else{
-                setErrors("Something went wrong try refreshin the page")
+                setErrors("Something went wrong try refreshin' the page")
             }
         })
     }
 
     return (
+        <div className="content">
         <div className="edit_job">
             {errors?
                 <h4 style={{color: "red"}}>**{errors}**</h4>
@@ -167,6 +168,7 @@ function EditJob() {
             <ul>
                 {renderUsers}
             </ul>
+        </div>
         </div>
     )
 
