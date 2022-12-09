@@ -9,9 +9,6 @@ function UsesrPage({ user }) {
             .then(data => setAllUsers(data))
     }, [])
 
-    console.log(user)
-    console.log(allUsers)
-
     if (!user) {
         const renderAllUsers = allUsers.map(user => {
             const renderUserJobs = user.jobs.map(job => {
