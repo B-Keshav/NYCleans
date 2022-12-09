@@ -38,6 +38,8 @@ function PostJob() {
             .then(r => r.json())
             .then(data => console.log(data))
         history.push('/jobs')
+        history.go()
+        // window.location.reload()
     }
 
 
@@ -88,7 +90,6 @@ function PostJob() {
                     placeholder="Zip"
                     name="zip"
                 />
-
                 <button type="submit" className="submitJob">Submit Job</button>
             </form>
         </div>
