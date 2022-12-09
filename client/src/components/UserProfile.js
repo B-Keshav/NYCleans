@@ -33,14 +33,11 @@ function UserProfile({ currentUser }) {
         }
 
         return (
-            <div key={job.id}>
-                <li className="profileJobs">
-                    <h2>{job.job_name}</h2>
-                    <img src={job.image} alt={job.job_name} />
-                    <p>{job.description}</p>
-                    <button onClick={(e) => handleClick(e)}>Remove from calendar</button>
-                </li>
-                <br></br>
+            <div key={job.id} className="userJobCard">
+                    <h2 className="jobTitle">{job.job_name}</h2>
+                    <img className="jobImage" src={job.image} alt={job.job_name} />
+                    <p className="jobDesc" >{job.description}</p>
+                    <button className='jobButton' onClick={(e) => handleClick(e)}>Remove from calendar</button>
             </div>
         )
     })
@@ -55,22 +52,21 @@ function UserProfile({ currentUser }) {
     // })
 
     return (
-        <div className="content">
+        <div className="content" id="profCont">
             <div>
                 <div className="profile">
-                <h1>Welcome {username}</h1>
+                <h1>Welcome, {username}!</h1>
                     <img src={currentUser.avatar} alt="avatar" className={"profilePicture"} />
                     <br />
-                    <h4 className="username">{username}</h4>
+                    <h2 className="username">{username}</h2>
                     <p><strong>Age:</strong> {age}</p>
                     <p><strong>Bio:</strong> {bio}</p>
                     <p><strong>Organization Affiliation:</strong> {organization.name}</p>
                     <p><strong>Based in:</strong> {organization.city}</p>
                 </div>
                 <div>
-                    
+                <h1>Current Jobs</h1>
                     <div className="userJobContainer">
-                    <h1>Current Jobs</h1>
                     { userJobs.length > 0 ?
                     userJobsElements :
                     <h3>No jobs! Volunteer for jobs to see your schedule.</h3>
