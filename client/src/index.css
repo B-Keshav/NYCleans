@@ -508,3 +508,8 @@ select {
 .userImage {
   margin-left: 7px;
 }
+
+.edit_job img{
+  height: 50%;
+  width: 50%;
+}
