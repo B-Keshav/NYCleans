@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useHistory, useParams } from 'react-router-dom'
 
 function EditJob() {
+    const [errors, setErrors] = useState(null)
     const [editJob, setEditJob] = useState(null)
     const [editForm, setEditForm] = useState({
         job_name: "",
@@ -35,7 +36,6 @@ function EditJob() {
 
         setEditForm({ ...editForm, [name]: value })
     }
-    console.log(location)
 
     function handleSubmit(e){
         e.preventDefault()
@@ -75,8 +75,27 @@ function EditJob() {
         })
     }
 
+    function handleDelete(e){
+        console.log(e.target)
+        fetch(`/jobs/${editJob.id}`,{
+            method: "DELETE"
+        }).then(res => {
+            if(res.ok){
+                history.push('/jobs')
+            }else{
+                setErrors("Something went wrong try refreshin the page")
+            }
+        })
+    }
+
     return (
         <div className="edit_job">
+            {errors?
+                <h4 style={{color: "red"}}>**{errors}**</h4>
+                :
+                null
+            }
+            <button onClick={handleDelete}>Cancel Event 🗑️</button>
             <h1>Edit Your Event:</h1>
             <form onSubmit={handleSubmit}>
                 <label>Job Name:</label><br />
