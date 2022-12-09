@@ -28,6 +28,7 @@ function JobContainer({ jobs, setSearch, user }) {
     // set then pass down, issignedupis set to that
     return <JobCard job={job} key={job.id} user={user} initialIsSignedUp={initialIsSignedUp} />
   })
+  
 
 
 

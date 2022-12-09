@@ -55,8 +55,8 @@ function Map({ user }) {
                     <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyB6wyOfDyMZwASobvaG-XhnmGLyzx2zYxo' }}
                     center={{
-                        lat: 40.70541807766208,
-                        lng: -74.01397913050388,
+                        lat: 40.77883491673802, 
+                        lng: -73.97361117286754
                     }}
                     defaultZoom={17}
                     gestureHandling={"none"}
