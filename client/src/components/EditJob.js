@@ -96,7 +96,7 @@ function EditJob() {
                 :
                 null
             }
-            <button onClick={handleDelete}>Cancel Event 🗑️</button>
+            <button className="jobButton" onClick={handleDelete}>Cancel Event 🗑️</button>
             <h1>Edit Your Event:</h1>
             <form onSubmit={handleSubmit}>
                 <label>Job Name:</label><br />
@@ -162,7 +162,7 @@ function EditJob() {
                     value={editForm.zip}
                 />
                 <br />
-                <button>Submit</button>
+                <button className="jobButton">Submit</button>
             </form>
             <h2>Current Volunteers:</h2>
             <ul>
