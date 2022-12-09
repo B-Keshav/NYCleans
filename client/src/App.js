@@ -8,6 +8,7 @@ import Organization from './components/Organization';
 import EditJob from './components/EditJob';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import UsesrPage from './components/UsersPage';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
           <Link to={"/"} className="home">Home</Link>
           <Link to={"/jobs"}>Jobs</Link>
           <Link to={"/postajob"}>Post a Job</Link>
+          <Link to={"/users"}>Our Volunteers</Link>
           <Link to={"/organizations"}>Organizations</Link>
           {user ?
             <>
@@ -79,6 +81,9 @@ function App() {
           </Route>
           <Route path='/edit/:id'>
             <EditJob />
+          </Route>
+          <Route path='/users'>
+            <UsesrPage user={user}/>
           </Route>
           <Route exact path="/">
             <Home user={user} />

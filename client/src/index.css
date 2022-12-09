@@ -472,3 +472,12 @@ select {
   border-radius: 10px;
 }
 
+.usersProfile{
+  position: relative;
+  width: 75%;
+  left: 250px;
+}
+
+.usersProfile div{
+  text-align: left;
+}
