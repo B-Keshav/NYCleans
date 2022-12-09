@@ -21,7 +21,7 @@ function Organization(){
 
     return(
         <div className="content">
-            <h1 className="org">Organizations we Partner With: </h1>
+            <h1 className="org">Organizations We Partner With: </h1>
                 {renderOrgs}
         </div>
     )
