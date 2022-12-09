@@ -481,3 +481,10 @@ select {
 .usersProfile div{
   text-align: left;
 }
+
+.usersProfile img{
+  width: 100px;
+  height: 103px;
+  border-style: solid;
+  border-radius: 6px;
+}

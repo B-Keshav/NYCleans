@@ -31,7 +31,7 @@ function UsesrPage({ user }) {
                         :
                         <p><strong>Affiliated with: </strong>{user.organization.name}</p>
                     }
-                    <p><strong>Bi0: </strong>{user.bio}</p>
+                    <p><strong>Bio: </strong>{user.bio}</p>
                     <p><strong>Current Jobs:</strong></p>
                     <ul>
                         {renderUserJobs.length > 0 ?
