@@ -89,6 +89,7 @@ function EditJob() {
     }
 
     return (
+        <div className="content">
         <div className="edit_job">
             {errors?
                 <h4 style={{color: "red"}}>**{errors}**</h4>
@@ -167,6 +168,7 @@ function EditJob() {
             <ul>
                 {renderUsers}
             </ul>
+        </div>
         </div>
     )
 
