@@ -387,11 +387,25 @@ select {
   margin-left: 32%;
 }
 .orgCard {
-  background-color: #809c4c;
+  color: #809c4c;
+  background-color: whitesmoke;
   list-style: none;
-  border-style: solid;
+  padding: 5px;
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+  width: 350px;
+}
+
+.org {
+  color: black;
+}
+
+.org-container {
+  float: left;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: space-between;
 }
 
 /* Flex Home page */
