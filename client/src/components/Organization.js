@@ -20,11 +20,9 @@ function Organization(){
 
 
     return(
-        <div className="orgs_page_box">
-            <h1>Organizations we Partner With: </h1>
-            <ul>
+        <div className="content">
+            <h1 className="org">Organizations We Partner With: </h1>
                 {renderOrgs}
-            </ul>
         </div>
     )
 }

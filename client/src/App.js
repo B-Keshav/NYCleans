@@ -51,7 +51,7 @@ function App() {
           <Link to={"/"} className="home">Home</Link>
           <Link to={"/jobs"}>Jobs</Link>
           <Link to={"/postajob"}>Post a Job</Link>
-          <Link to={"/users"}>Our Volunteers</Link>
+          <Link to={"/users"}>Our Community</Link>
           <Link to={"/organizations"}>Organizations</Link>
           {user ?
             <>
