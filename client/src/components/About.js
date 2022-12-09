@@ -26,14 +26,15 @@ function About ({user}) {
                     </section>
                         {isTrue? 
                         <section  className="firstsection">
-                            <p className="more">Our Mission <br/>Keeping our City Clean!</p>
-                            <p className="more">Core Members <br/> 
+                            <p className="more"><strong>Our Mission</strong> <br/>Sustain thriving Parks & <br/>Public Spaces for New Yorkers</p>
+                            <p className="more"><strong>Core Members</strong> <br/> 
                                 Madeline Dulchin <br/>
                                 Angela Pace<br/>
                                 Keshav Bhati<br/>
                                 Harrison Wilson<br/>
                             </p>
-                            <p className="more">Trees Planted:<br/>955,493</p>
+                            <p className="more"><strong>Trees Planted:</strong><br/>955,493<br/><strong>Parks Cleaned:</strong><br/>106</p>
+
                         </section>
                         :
                         <section  className="firstsection">
