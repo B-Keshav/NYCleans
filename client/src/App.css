@@ -41,7 +41,6 @@
 /* MAP JOB CARDS (FOR MAP CARDS ONLY) */
 
 .mapJobCard {
-  height: 100px;
   width: auto;
   position: relative;
   background-color:#61dafb;
@@ -50,7 +49,7 @@
   display: block;
   justify-content: center;
   text-align: center;
-  background-color: #c7eafb94;
+  background-color: #c7eafbd8;
   max-width: 94%;
   margin-top: 4%;
   color: #1A1F0F;
@@ -61,7 +60,7 @@
   display: block;
   justify-content: center;
   text-align: center;
-  background-color: #c7eafb94;
+  background-color: #c7eafbd9;
   max-width: 94%;
   margin-top: 4%;
   color: #1A1F0F;

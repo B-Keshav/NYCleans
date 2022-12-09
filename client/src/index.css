@@ -163,12 +163,6 @@ font-weight: 500;
   font-size: 40px;
 }
 
-/* Google Map */
-.google-map {
-  max-width: 400px;
-  max-height: 400px;
-  padding: 10px;
-}
 
 /* Avatar selection icons */
 .avatarDiv {
@@ -393,11 +387,25 @@ select {
   margin-left: 32%;
 }
 .orgCard {
-  background-color: #809c4c;
+  color: #809c4c;
+  background-color: whitesmoke;
   list-style: none;
-  border-style: solid;
+  padding: 5px;
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+  width: 350px;
+}
+
+.org {
+  color: black;
+}
+
+.org-container {
+  float: left;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: space-between;
 }
 
 /* Flex Home page */
@@ -420,7 +428,7 @@ select {
   font-size: 36px;
   font-weight: 300;
   line-height: 42.0001px;
-  text-align: center;
+  float: center;
 }
 
 .firstsection {
@@ -466,11 +474,14 @@ select {
 
 .more{
   background-color: white;
-  min-width: fit-content;
+  width: 22%;
   font-size: 20px;
   color:rgb(16, 67, 13);
   padding: 10px;
   border-radius: 10px;
+  margin: auto;
+  text-align: center;
+
 }
 
 .usersProfile{
