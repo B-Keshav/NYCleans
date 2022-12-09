@@ -163,12 +163,6 @@ font-weight: 500;
   font-size: 40px;
 }
 
-/* Google Map */
-.google-map {
-  max-width: 400px;
-  max-height: 400px;
-  padding: 10px;
-}
 
 /* Avatar selection icons */
 .avatarDiv {
