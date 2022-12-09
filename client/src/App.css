@@ -47,10 +47,23 @@
   background-color:#61dafb;
   z-index: 1;
   border-style: solid;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  background-color: #c7eafb94;
+  max-width: 94%;
+  margin-top: 4%;
+  color: #1A1F0F;
+  border-radius: 1.5%;
 }
 
 .mapJobDesc {
-  position: relative;
-  background-color:#61dafb;
-  border-style: solid;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  background-color: #c7eafb94;
+  max-width: 94%;
+  margin-top: 4%;
+  color: #1A1F0F;
+  border-radius: 1.5%;
 }
