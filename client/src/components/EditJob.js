@@ -76,6 +76,7 @@ function EditJob() {
     }
 
     return (
+        <div className="content">
         <div className="edit_job">
             <h1>Edit Your Event:</h1>
             <form onSubmit={handleSubmit}>
@@ -148,6 +149,7 @@ function EditJob() {
             <ul>
                 {renderUsers}
             </ul>
+        </div>
         </div>
     )
 

@@ -47,6 +47,14 @@ function Map({ user }) {
         )
     })
 
+    useEffect(() => {
+        fetch("/jobs")
+            .then((r) => r.json())
+            .then(data => console.log(data))
+    }, []);
+
+
+
 
 
     return ( 
