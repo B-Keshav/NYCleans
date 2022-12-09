@@ -210,6 +210,7 @@ font-weight: 500;
 .profilePicture {
   width: 120px;
   border-radius: 8px;
+  border-style: solid;
 }
 .jobContainer h1 {
   grid-area: "header";
