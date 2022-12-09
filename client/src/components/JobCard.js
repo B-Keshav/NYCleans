@@ -90,7 +90,6 @@ function JobCard({ job, user, initialIsSignedUp }) {
         <div className="jobCard">
             <h2 className="jobTitle">{job.job_name}</h2>
             <img className="jobImage" src={job.image} alt="location to be cleaned"></img>
-            <p className="jobTitle">{job.name}</p>
             <p className="jobDesc">{job.description}</p>
             <p className="jobLoc">📍{job.location.address}</p>
 

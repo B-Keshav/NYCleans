@@ -38,17 +38,7 @@ width: 100%;
   background-color: #c7eafb;
 }
 
-/* form input {
-margin-left: 25%;
-padding: 0.25rem;
-border: none;
-font-family: inherit;
-font-size: 1.2em;
-border-bottom: 2px solid rgb(16, 67, 13);
-transition: all 0.2s;
-width: 50%;
-text-align: center;
-} */
+
 .submitJob {
   margin-left: 46%;
   margin-top: 2%;
@@ -59,22 +49,6 @@ text-align: center;
   text-decoration: underline;
   border: none;
 }
-/* .content {
-  display: block;
-  margin: auto;
-}
-.content form {
-display: inline-block;
-justify-content: center;
-padding: 0.25rem;
-border: none;
-font-family: inherit;
-font-size: 1.2em;
-border-bottom: 2px solid rgb(16, 67, 13);
-transition: all 0.2s;
-width: 50%;
-text-align: center;
-} */
 
 
 .jobContainer {
@@ -92,8 +66,6 @@ text-align: center;
   text-align: center;
   background-color: #c7eafb94;
   max-width: 94%;
-  /* margin-left: auto;
-  margin-right: auto; */
   margin-top: 4%;
   color: #1A1F0F;
   border-radius: 1.5%;
@@ -226,44 +198,42 @@ font-weight: 500;
 }
 
 /* PROFILE STYLING */
-.profile {
-  display: grid;
-  text-align: left;
-  position: center;
-  width: 400px;
-  position: relative;
-}
-
-
 .userJobContainer {
   display: grid;
-  width: 400px;
-  position: relative;
-}
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "job job job"
+    "job job job";
 
+}
+.profile {
+  margin: auto;
+  text-align: center;
+}
+.username {
+  text-decoration: green underline overline;
+}
 .profilePicture {
   width: 120px;
-  border-style: solid;
   border-radius: 8px;
 }
-.profileJobs {
-  background-color: #809c4c;
-  width: 400px;
-  list-style: none;
-  border-style: solid;
-  border-radius: 8px;
-}
-.profileJobs img {
-  width: 400px;
-  border-top: solid;
-  border-bottom: solid;
-}
-.userJobContainer {
-  display: inline-block;
-  width: 400px;
-  position: relative;
+.jobContainer h1 {
+  grid-area: "header";
 }
 
+.userJobCard {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  background-color: #c7eafb94;
+  max-width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  color: #1A1F0F;
+  border-radius: 1.5%;
+}
 
 
 /* Side Bar */
@@ -347,8 +317,6 @@ div.content {
   grid-template-areas: 
   "h" "h" 
   "a" "b";
-  /* height: 400px; 
-  background-color: #f2f1f1; */
   grid-template-columns: 2fr 2fr;
 }
 .signDiv {
@@ -358,16 +326,10 @@ div.content {
   font-family: sans-serif;
   grid-area: "a";
   font-size: large;
-  /* padding-top: 15px; */
   margin-left: 30%;
   margin-right: 5%;
-  /* margin-top: 10%; */
   margin-bottom: 20%;
-  /* background-color: white;
-  text-align: center;
-  outline-style: groove;
-  outline-color: #276e1daf;
-  outline-width: thin;  */
+
 }
 .signUpForm input {
   font-family: sans-serif;
@@ -495,6 +457,7 @@ select {
   width: 100%;
   text-align: center;
 }
+
 .more{
   background-color: white;
   min-width: fit-content;
@@ -503,3 +466,4 @@ select {
   padding: 10px;
   border-radius: 10px;
 }
+
