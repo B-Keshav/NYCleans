@@ -227,12 +227,20 @@ font-weight: 500;
 
 /* PROFILE STYLING */
 .profile {
-  display: inline-block;
+  display: grid;
   text-align: left;
   position: center;
   width: 400px;
   position: relative;
 }
+
+
+.userJobContainer {
+  display: grid;
+  width: 400px;
+  position: relative;
+}
+
 .profilePicture {
   width: 120px;
   border-style: solid;
@@ -250,11 +258,14 @@ font-weight: 500;
   border-top: solid;
   border-bottom: solid;
 }
+
+
 .userJobContainer {
   display: inline-block;
   width: 400px;
   position: relative;
 }
+
 
 
 /* Side Bar */
