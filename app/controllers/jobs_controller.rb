@@ -42,7 +42,7 @@ class JobsController < ApplicationController
 
     def destroy 
         job = Job.find(params[:id])
-        job.delete 
+        job.destroy 
         head :no_content
     end 
 

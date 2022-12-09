@@ -5,8 +5,7 @@ function Home ({user}){
 
     return (
         <>
-        < About /> 
-        < Map user={user}/>
+        < About user={user}/> 
         </>
     )
     

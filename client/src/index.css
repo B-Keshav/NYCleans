@@ -4,19 +4,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: FoundersGrotesk, sans-serif;
 }
-
 /* Formatting jobs  */
 .searchBar {
   padding: 1rem;
   display: flex;
   flex-direction: column;
 }
-
-
 input {
   padding: 0.25rem;
   border: none;
@@ -26,8 +22,6 @@ input {
   transition: all 0.2s;
   width: 100%;
 }
-
-
 #search {
 padding: 0.25rem;
 border: none;
@@ -37,7 +31,6 @@ border-bottom: 2px solid rgb(16, 67, 13);
 transition: all 0.2s;
 width: 100%;
 }
-
 .content h1 {
   /* margin-top: 3%; */
   text-align: center;
@@ -66,8 +59,6 @@ text-align: center;
   text-decoration: underline;
   border: none;
 }
-
-
 /* .content {
   display: block;
   margin: auto;
@@ -95,7 +86,6 @@ text-align: center;
     "job job job";
 
 }
-
 .jobCard {
   display: block;
   justify-content: center;
@@ -120,7 +110,6 @@ font-weight: 500;
 .jobCard h2{
   color: #162807;
 }
-
 .jobImage {
   position: relative;
   max-width: 70%;
@@ -128,7 +117,6 @@ font-weight: 500;
   margin: 3%;
   border-radius: 1.5%;
 }
-
 .jobButton {
   font-family: FoundersGrotesk, sans-serif;
   font-size: 19px;
@@ -142,7 +130,6 @@ font-weight: 500;
   cursor: pointer;
   padding: 6px;
 }
-
 .jobButton:hover{
   font-size: 20px;
   background-color: #0190c4
@@ -161,13 +148,11 @@ font-weight: 500;
   font-weight:bold;
 
 }
-
 .top-banner::before {
   content: "NYClean is here!";
   animation: animate infinite 7s;
   padding-left: 10px;
 }
-
 @keyframes animate {
 
   0% {
@@ -183,7 +168,7 @@ font-weight: 500;
   }
 }
 
-/* Logo Bar */
+/* Logo/ Logo Bar */
 .logo_bar {
   line-height: 40px;
   text-align: left;
@@ -194,13 +179,11 @@ font-weight: 500;
   font-size: large;
   font-weight: 700;
 }
-
 .logo {
   max-width: 70px;
   padding-left: 10px;
   padding-top: 10px;
 }
-
 .logo-text {
   float: left;
   color: #6fa249;
@@ -208,12 +191,14 @@ font-weight: 500;
   padding-left: 10px;
   font-size: 40px;
 }
+
 /* Google Map */
 .google-map {
-  max-width: 600px;
-  max-height: 550px;
-  padding: 20px;
+  max-width: 400px;
+  max-height: 400px;
+  padding: 10px;
 }
+
 /* Avatar selection icons */
 .avatarDiv {
   margin-top: 9px;
@@ -225,18 +210,15 @@ font-weight: 500;
 }
 .avatarIcon {
   width: 60px;
-  
   border-style: solid;
   border-radius: 8px;
 }
-
 .avatarCard {
   display: inline-flex;
   margin: 5px;
   width: 60px;
   height: 64px;
 }
-
 .avatarSelected {
   position: relative;
   right: 60px;
@@ -252,6 +234,7 @@ font-weight: 500;
   position: relative;
 }
 
+
 .userJobContainer {
   display: grid;
   width: 400px;
@@ -263,7 +246,6 @@ font-weight: 500;
   border-style: solid;
   border-radius: 8px;
 }
-
 .profileJobs {
   background-color: #809c4c;
   width: 400px;
@@ -271,12 +253,19 @@ font-weight: 500;
   border-style: solid;
   border-radius: 8px;
 }
-
 .profileJobs img {
   width: 400px;
   border-top: solid;
   border-bottom: solid;
 }
+
+
+.userJobContainer {
+  display: inline-block;
+  width: 400px;
+  position: relative;
+}
+
 
 
 /* Side Bar */
@@ -289,7 +278,6 @@ font-weight: 500;
   height: 100%;
   overflow: auto;
 }
-
 /* Sidebar links */
 .sidebar a {
   display: block;
@@ -297,13 +285,11 @@ font-weight: 500;
   padding: 16px;
   text-decoration: none;
 }
-
 /* Active/current link */
 .sidebar a.active {
   background-color: #376312;
   color: white
 }
-
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
   background-color: rgb(12, 42, 25);
@@ -333,16 +319,13 @@ div.content {
     margin-left: 0;
   }
 }
-
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
   .sidebar a {
     text-align: center;
     float: none;
   }
-
 }
-
 .orgs_page_box {
   text-align: left;
   width: 500px;
@@ -350,37 +333,17 @@ div.content {
   position: relative;
   margin-left: 25%;
 }
-
-
-.welcome {
-  float: left
-}
-
 /* Volunteers */
-
-/* #homecontent{
-
-} */
-.vol-container {
-  max-width: 900px;
-  max-height: 500px;
-  margin: 100px;
- }
-
 .volunteers {
-  max-width: 600px;
+  max-width: 400px;
   max-height: 500px;
   float: left;
 }
-
-
-.about-text{
-  max-width: 260px;
-  padding-left: 10px;
-  float: right;
-
+.volunteers1 {
+  max-width: 700px;
+  max-height: 500px;
 }
-
+/* Sign Up Login */
 #signUpLogin {
   display: grid;
   grid-template-areas: 
@@ -393,7 +356,6 @@ div.content {
 .signDiv {
   margin-left: 4%;
 }
-
 .signUpForm {
   font-family: sans-serif;
   grid-area: "a";
@@ -415,8 +377,6 @@ div.content {
   margin: 2px;
   text-align: center;
 }
-
-
 .loginDiv {
   grid-area: "b";
   text-align: center;
@@ -466,8 +426,6 @@ select {
 #ca {
   margin-left: 32%;
 }
-
-
 .orgCard {
   background-color: #809c4c;
   list-style: none;
@@ -476,21 +434,66 @@ select {
   margin-bottom: 8px;
 }
 
+/* Flex Home page */
 .flex {
   display: flex;
   gap: 10px;
   gap: 10px 20px; /* row-gap column gap */
   row-gap: 10px;
-  column-gap: 20px;
-  justify-content: space-around;
+  column-gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
 }
 
-.text {
-  max-width: 480px;
-  }
+ /* About Us */
+.firstsection {
+  width: 100%;
+}
+.firstsection {
+  display: block;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 42.0001px;
+  text-align: center;
+}
 
-/* just for testing */
-.edit_job{
-  position: relative;
-  left: 300px;
+.firstsection {
+  display: block;
+  width: 100%;
+  height: 250px;
+  background-color: #dff0cc;
+  float: left;
+}
+
+.header {
+  background-color: #dff0cc;
+}
+.h1,
+.h2,
+.h3 {
+  color: rgb(87, 151, 73);
+  padding: 10px;
+  width: 30%;
+  border-top: 4px solid rgb(20, 133, 65);
+  background-color: white;
+  height: 40px;
+  font-size: smaller;
+}
+
+.expand {
+  margin: auto;
+}
+
+.firstsection {
+  display: flex;
+  flex-wrap: row wrap;
+  justify-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+.pop {
+  float: right;
+  height: 100px;
+  width: 100%;
+  text-align: center;
 }
