@@ -83,7 +83,7 @@ function EditJob() {
             if(res.ok){
                 history.push('/jobs')
             }else{
-                setErrors("Something went wrong try refreshin the page")
+                setErrors("Something went wrong try refreshin' the page")
             }
         })
     }

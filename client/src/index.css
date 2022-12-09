@@ -258,8 +258,6 @@ font-weight: 500;
   border-top: solid;
   border-bottom: solid;
 }
-
-
 .userJobContainer {
   display: inline-block;
   width: 400px;
@@ -501,5 +499,7 @@ select {
   background-color: white;
   min-width: fit-content;
   font-size: 20px;
-  color:rgb(16, 67, 13)
+  color:rgb(16, 67, 13);
+  padding: 10px;
+  border-radius: 10px;
 }
