@@ -19,9 +19,9 @@ function About ({user}) {
                 </div>
                     <section className="pop">
                         {isTrue?
-                             <h1 onClick={isItTrue} classsName="header">Click to Collapse</h1>
+                             <h1 onClick={isItTrue} className="header">Click to Collapse</h1>
                             :
-                            <h1 onClick={isItTrue} classsName="header">Click here to learn more about us!</h1>
+                            <h1 onClick={isItTrue} className="header">Click here to learn more about us!</h1>
                         }
                     </section>
                         {isTrue? 
