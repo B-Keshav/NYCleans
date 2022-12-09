@@ -5,7 +5,7 @@ function UserProfile({ currentUser }) {
 
 
     useEffect(() => {
-        fetch("userjobs")
+        fetch("/userjobs")
             .then(resp => resp.json())
             .then(data => setUserJobs(data))
     }, [])
