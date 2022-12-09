@@ -47,7 +47,7 @@ function App() {
       
       <div className="App">
         <div className="sidebar">
-          <Link to={"/"} className="active">Home</Link>
+          <Link to={"/"} className="home">Home</Link>
           <Link to={"/jobs"}>Jobs</Link>
           <Link to={"/postajob"}>Post a Job</Link>
           <Link to={"/organizations"}>Organizations</Link>

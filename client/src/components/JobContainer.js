@@ -22,7 +22,6 @@ function JobContainer({ jobs, setSearch, user }) {
   const jobsArray = jobs.map(job => {
     const hasJob = user.volunteers.map(j => j.job_id)
     const initialIsSignedUp = hasJob.includes(job.id)
-    // set then pass down, issignedupis set to that
     return <JobCard job={job} key={job.id} user={user} initialIsSignedUp={initialIsSignedUp} />
   })
 

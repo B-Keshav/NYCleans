@@ -32,7 +32,6 @@ transition: all 0.2s;
 width: 100%;
 }
 .content h1 {
-  /* margin-top: 3%; */
   text-align: center;
   padding: 15px;
   background-color: #c7eafb;
@@ -253,15 +252,21 @@ font-weight: 500;
   padding: 16px;
   text-decoration: none;
 }
+
+/* Links on mouse-over */
+
+.sidebar a:hover:not(:active) {
+  background-color: rgb(12, 42, 25);
+  color: white;
+}
 /* Active/current link */
-.sidebar a.active {
+.sidebar a:active {
   background-color: #376312;
   color: white
 }
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: rgb(12, 42, 25);
-  color: white;
+.sidebar a:focus {
+  background-color: #376312;
+  color: white
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
