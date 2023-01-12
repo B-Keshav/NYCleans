@@ -47,7 +47,7 @@ function PostJob() {
         <div className="content">
             <h1>Post a Job!</h1>
 
-            <form onSubmit={handleSubmit}>
+            <form className="post-job-form" onSubmit={handleSubmit}>
                 <input
                     onChange={handleChange}
                     type="text"
