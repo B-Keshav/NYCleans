@@ -24,8 +24,8 @@ function UsesrPage({ user }) {
             })
             return (
                 <div className="jobCard">
-                    <h2>{user.username}</h2>
-                    <img src={user.avatar} alt={user.username} />
+                    <h2 className='userUsername'>{user.username}</h2>
+                    <img className="userImage" src={user.avatar} alt={user.username} />
                     {user.organization.name === 'None' ?
                         null
                         :
