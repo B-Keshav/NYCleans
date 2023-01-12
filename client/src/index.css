@@ -39,7 +39,7 @@ width: 100%;
 
 
 .submitJob {
-  margin-left: 46%;
+  margin-left: 40%;
   margin-top: 2%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 19px;
@@ -498,4 +498,9 @@ select {
   height: 103px;
   border-style: solid;
   border-radius: 6px;
+}
+
+.post-job-form{
+  width: 500px;
+  margin: auto;
 }
